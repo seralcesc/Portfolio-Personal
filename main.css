@@ -372,7 +372,11 @@ button {
   transform: scale(1.02);
 }
 
-/* Sección General */
+/* 4. Galería de pryectos: Sección General */
+.projects {
+  padding: var(--section-padding);
+}
+
 .section-title {
   font-size: var(--fs-h2);
   font-variation-settings: "wght" 800;
@@ -393,8 +397,10 @@ button {
 }
 
 /* Proyectos */
-.projects {
-  padding: var(--section-padding);
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .project-card {
@@ -405,12 +411,13 @@ button {
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
   border-color: rgba(255, 0, 60, 0.3);
-  box-shadow: 0 10px 30px -15px rgba(255, 0, 60, 0.2);
-  transform: translateY(-5px);
+  box-shadow: 0 5px 30px -5px rgba(255, 0, 60, 0.8);
 }
 
 .project-card__status {
@@ -424,6 +431,20 @@ button {
   border: 1px solid var(--accent-violet);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-card__status {
+    position: relative;
+    top: 0;
+    right: 0;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
 }
 
 .project-card__title {
