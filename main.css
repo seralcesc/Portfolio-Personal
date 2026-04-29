@@ -283,6 +283,7 @@ button {
 
 .hero__title-accent {
   background: linear-gradient(90deg, var(--accent-red), var(--accent-violet));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
