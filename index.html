@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S.Alcántara | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de S.Adev, desarrollador especializado en eficiencia frontend y arquitecturas de alto rendimiento."
+    />
+
+    <!-- Tipografía Sostenible: Roboto Flex (Fuente Variable) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <!-- 2. Cabecera y Navegación Principal -->
+    <header class="header">
+      <a href="#" class="logo" data-text="<S.Adev>" aria-label="Inicio">
+        &lt;S.Adev&gt;
+      </a>
+      <button
+        class="menu-toggle"
+        id="btnOpenMenu"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        Menú [=]
+      </button>
+    </header>
+
+    <!-- Menú Lateral Modal (Accesibilidad Nativa con <dialog>) -->
+    <dialog class="sidebar" id="sidebar" aria-label="Menú de navegación">
+      <button class="sidebar__close" id="btnCloseMenu" aria-label="Cerrar menú">
+        &times;
+      </button>
+      <nav>
+        <ul class="sidebar__nav">
+          <li><a href="#hero" class="sidebar__link">01 // Inicio</a></li>
+          <li>
+            <a href="#proyectos" class="sidebar__link"
+              >02 // Casos de Estudio</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="sidebar__link">03 // Arquitectura Tech</a>
+          </li>
+          <li>
+            <a href="#skills" class="sidebar__link">04 // Formación</a>
+          </li>
+          <li><a href="#contacto" class="sidebar__link">05 // Contactar</a></li>
+        </ul>
+      </nav>
+    </dialog>
+
+    <!-- 1. Contenedor Raíz -->
+    <main>
+      <!-- 3. Hero Section (Impacto visual) -->
+      <section id="hero" class="hero" aria-label="Introducción">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Construyendo<br />
+            <span class="hero__title-accent">el mañana.</span>
+          </h1>
+          <p class="hero__text">
+            Estudiante de DAM enfocado en Eficiencia y Desarrollo Sostenible.
+            Arquitectura limpia, accesible y de alto rendimiento.
+          </p>
+          <p class="hero__text">
+            Mi objetivo es seguir creciendo como desarrollador y aportar valor a
+            los proyectos en los que participe.
+          </p>
+          <a href="#proyectos" class="btn-neon">Explorar Proyectos</a>
+        </div>
+
+        <!-- Contenedor para la foto -->
+        <figure class="hero__image-wrapper">
+          <picture class="hero__portrait">
+            <img
+              src="assets/photo1.webp"
+              alt="Sergio Alcántara. Desarrollador Web"
+              loading="eager"
+            />
+          </picture>
+        </figure>
+      </section>
+
+      <!-- 4. Galería de Proyectos -->
+      <section id="proyectos" class="projects" aria-labelledby="title-projects">
+        <h2 id="title-projects" class="section-title">Integraciones Reales</h2>
+
+        <article class="project-card">
+          <span class="project-card__status">En Evolución</span>
+          <h3 class="project-card__title">jcrisol.com | Landing Page</h3>
+          <p class="hero__text">
+            Desarrollo frontend desde cero respetando las directrices de marca
+            del cliente (Strict Light Theme). Implementación semántica para
+            mejorar la estructuración de contenidos y preparación de la base
+            para futuras interacciones dinámicas.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-card__status">En Evolución</span>
+          <h3 class="project-card__title">Portfolio Personal</h3>
+          <p class="hero__text">
+            Un portafolio responsivo hecho con HTML, CSS y JavaScript para
+            mostrar mis trabajos.
+          </p>
+        </article>
+      </section>
+
+      <!-- 5. Bento Box de Habilidades -->
+      <section id="skills" class="skills" aria-labelledby="title-skills">
+        <h2 id="title-skills" class="section-title">Stack Técnico & Valores</h2>
+
+        <div class="bento-grid">
+          <article class="bento-item">
+            <h3 class="bento-item__title">Java</h3>
+            <p>
+              Enfoque en programación orientada a objetos, robustez del backend
+              y lógica de sistemas escalables.
+            </p>
+          </article>
+
+          <article class="bento-item">
+            <h3 class="bento-item__title">HTML5 / CSS3 / JS</h3>
+            <p>
+              Excelencia semántica y metodologías modernas (BEM, CSS Grid,
+              Variables) para interfaces fluidas y ligeras.
+            </p>
+          </article>
+
+          <article class="bento-item">
+            <h3 class="bento-item__title">Accesibilidad (A11y)</h3>
+            <p>
+              Compromiso nativo con WCAG. Teclado navegable, ARIA labels
+              correctos y alto contraste por defecto.
+            </p>
+          </article>
+
+          <article class="bento-item">
+            <h3 class="bento-item__title">Sostenibilidad</h3>
+            <p>
+              Código limpio y minimalismo funcional que reduce peticiones y
+              minimiza las emisiones de CO2 por visita.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- 6. Footer  -->
+    <footer class="footer" id="contacto">
+      <p class="footer__copy">
+        &copy; 2026 Sergio Alcántara. Futuro Desarrollador.<br />
+        <span style="font-size: 0.8rem; color: var(--accent-red)"
+          >Sistema de bajas emisiones: Mínimo JS, Máximo Rendimiento.</span
+        >
+      </p>
+
+      <nav aria-label="Redes Sociales">
+        <ul class="footer__social-list">
+          <!-- LinkedIn Icon -->
+          <li>
+            <a
+              href="#"
+              class="footer__social-link"
+              aria-label="Perfil de LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+          </li>
+          <!-- GitHub Icon -->
+          <li>
+            <a
+              href="#"
+              class="footer__social-link"
+              aria-label="Perfil de GitHub"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </li>
+          <!-- CodePen Icon -->
+          <li>
+            <a
+              href="#"
+              class="footer__social-link"
+              aria-label="Perfil de CodePen"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 8.25v7.5c0 .17-.06.33-.18.45l-11.5 7.5c-.1.06-.2.1-.32.1-.12 0-.22-.04-.32-.1l-11.5-7.5c-.12-.12-.18-.28-.18-.45v-7.5c0-.17.06-.33.18-.45l11.5-7.5c.2-.13.44-.13.64 0l11.5 7.5c.12.12.18.28.18.45zm-12 11.23l8.76-5.71-3.64-2.43-5.12 3.42v4.72zm-1.5 0v-4.72l-5.12-3.42-3.64 2.43 8.76 5.71zm6.98-7.48l3.18-2.12-8.66-5.65-8.66 5.65 3.18 2.12 5.48-3.66 5.48 3.66zm-5.48-1.5l-3.32 2.22 3.32 2.22 3.32-2.22-3.32-2.22z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
