@@ -539,9 +539,20 @@ button {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.footer__copy {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.footer__copy span {
+  font-size: 0.8rem;
+  color: var(--accent-red);
+}
+
 .footer__social-list {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -563,12 +574,35 @@ button {
   transform: translateY(-3px);
 }
 
-.footer__copy {
-  color: var(--text-dim);
-  font-size: 0.9rem;
+.footer__social-link--cv {
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  margin-left: -0.3rem;
 }
 
-.footer__copy span {
-  font-size: 0.8rem;
-  color: var(--accent-red);
+.footer__cv-label {
+  font-size: 0.9rem;
+  font-variation-settings: "wght" 800;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  .footer__social-list {
+    gap: 2rem;
+    justify-content: center;
+  }
 }
