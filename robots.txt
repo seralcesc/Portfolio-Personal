@@ -1,4 +1,4 @@
-Sergio Alcántara - Robots.txt Vanguardia 2026
+Sergio Alcántara - Robots.txt
 
 User-agent: *
 Allow: /
@@ -21,4 +21,4 @@ Allow: /
 
 Referencia al Mapa del Sitio
 
-Sitemap: https://tu-dominio.com/sitemap.xml
+Sitemap: https://seralcesc.github.io/Portfolio-Personal/sitemap.xml
