@@ -6,10 +6,57 @@
     <title>S.Alcántara | Portfolio</title>
     <meta
       name="description"
-      content="Portfolio de S.Adev, desarrollador especializado en eficiencia frontend y arquitecturas de alto rendimiento."
+      content="Portfolio de Sergio Alcántara, desarrollador especializado en eficiencia y arquitecturas de alto rendimiento."
     />
 
-    <!-- Tipografía Sostenible: Roboto Flex (Fuente Variable) -->
+    <!-- --- CANONICAL TAG --- -->
+    <link rel="canonical" href="https://tu-dominio.com/" />
+
+    <!-- --- META TAGS SOCIALES (Open Graph & Twitter) --- -->
+    <meta property="og:title" content="S.Alcántara | Portfolio" />
+    <meta
+      property="og:description"
+      content="Arquitecturas web de alto rendimiento diseñadas para los estándares de 2026."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tu-dominio.com/" />
+    <meta
+      property="og:image"
+      content="https://tu-dominio.com/assets/og-preview.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="S.Alcántara | Desarrollador Web" />
+    <meta
+      name="twitter:description"
+      content="Eficiencia, Sostenibilidad y Accesibilidad nativa."
+    />
+
+    <!-- --- Datos Estructurados (JSON-LD) --- -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sergio Alcántara",
+        "jobTitle": "Desarrollador Web",
+        "url": "https://tu-dominio.com",
+        "image": "https://tu-dominio.com/assets/photo1.webp",
+        "sameAs": [
+          "https://linkedin.com/in/tu-perfil",
+          "https://github.com/tu-usuario"
+        ],
+        "description": "Estudiante de DAM especializado en desarrollo sostenible y eficiencia frontend.",
+        "knowsAbout": [
+          "Desarrollo Web",
+          "Java",
+          "Accesibilidad Web",
+          "SEO Técnico",
+          "Web Performance"
+        ]
+      }
+    </script>
+
+    <!-- Tipografía: Roboto Flex -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +67,7 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <!-- 2. Cabecera y Navegación Principal -->
+    <!-- 1. Cabecera y Navegación Principal -->
     <header class="header">
       <a href="#" class="logo" data-text="<S.Adev>" aria-label="Inicio">
         &lt;S.Adev&gt;
@@ -35,7 +82,7 @@
       </button>
     </header>
 
-    <!-- Menú Lateral Modal (Accesibilidad Nativa con <dialog>) -->
+    <!-- 2. Menú Lateral Modal (Accesibilidad Nativa con <dialog>) -->
     <dialog class="sidebar" id="sidebar" aria-label="Menú de navegación">
       <button class="sidebar__close" id="btnCloseMenu" aria-label="Cerrar menú">
         &times;
@@ -59,7 +106,7 @@
       </nav>
     </dialog>
 
-    <!-- 1. Contenedor Raíz -->
+    <!-- Contenedor Raíz -->
     <main>
       <!-- 3. Hero Section (Impacto visual) -->
       <section id="hero" class="hero" aria-label="Introducción">
