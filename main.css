@@ -460,17 +460,24 @@ button {
 }
 
 /* Tech Bento (Habilidades) - :has() CSS */
-.skills {
+/* FAQ (AEO: Answer Engine Optimization) */
+.skills,
+.faq {
   padding: var(--section-padding);
 }
+.faq {
+  background: #0a0a0a;
+}
 
-.bento-grid {
+.bento-grid,
+.faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--gap-bento);
 }
 
-.bento-item {
+.bento-item,
+.faq-item {
   background-color: var(--bg-surface);
   padding: 2.5rem;
   border-radius: 8px;
@@ -481,50 +488,33 @@ button {
   gap: 1rem;
 }
 
-.bento-item__title {
+.bento-item__title,
+.faq-item__title {
   font-size: 1.5rem;
   color: var(--accent-red);
   font-variation-settings: "wght" 600;
 }
 
+.bento-item p,
+.faq-item p {
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
 /* Efecto Foco: :has() */
 /* Si la cuadrícula tiene un elemento con hover, a los que NO tienen hover les bajamos la opacidad */
 @supports selector(:has(a)) {
-  .bento-grid:has(.bento-item:hover) .bento-item:not(:hover) {
+  .bento-grid:has(.bento-item:hover) .bento-item:not(:hover),
+  .faq-grid:has(.faq-item:hover) .faq-item:not(:hover) {
     opacity: 0.4;
     filter: grayscale(80%);
   }
 }
 
-.bento-item:hover {
+.bento-item:hover,
+.faq-item:hover {
   border-color: var(--accent-red);
   box-shadow: 0 0 20px rgba(255, 0, 60, 0.1);
-}
-
-/* --- FAQ (AEO: Answer Engine Optimization) --- */
-.faq {
-  padding: var(--section-padding);
-  background: #0a0a0a;
-}
-.section-title {
-  font-size: var(--fs-h2);
-  margin-bottom: 3rem;
-  position: relative;
-  padding-left: 1rem;
-  border-left: 4px solid var(--accent-red);
-}
-.faq__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-}
-.faq__item h3 {
-  color: var(--accent-red);
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-.faq__item p {
-  color: var(--text-dim);
 }
 
 /* Footer */
