@@ -1,14 +1,14 @@
-Sergio Alcántara - Robots.txt 2026
+Sergio Alcántara - Robots.txt Vanguardia 2026
 
 User-agent: *
 Allow: /
 
-Bloquear acceso a carpetas de sistema si existieran
+Bloqueo de directorios sensibles
 
 Disallow: /admin/
-Disallow: /private/
+Disallow: /config/
 
-Permitir a los bots de IA de Google, OpenAI y Perplexity
+Optimización para Agentes de IA (Cualquier IA de búsqueda leerá tu web)
 
 User-agent: Googlebot
 Allow: /
@@ -16,7 +16,9 @@ User-agent: GPTBot
 Allow: /
 User-agent: PerplexityBot
 Allow: /
+User-agent: Claude-Web
+Allow: /
 
-Ubicación del Sitemap
+Referencia al Mapa del Sitio
 
 Sitemap: https://tu-dominio.com/sitemap.xml
