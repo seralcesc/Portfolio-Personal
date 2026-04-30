@@ -1,0 +1,22 @@
+Sergio Alcántara - Robots.txt 2026
+
+User-agent: *
+Allow: /
+
+Bloquear acceso a carpetas de sistema si existieran
+
+Disallow: /admin/
+Disallow: /private/
+
+Permitir a los bots de IA de Google, OpenAI y Perplexity
+
+User-agent: Googlebot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+Ubicación del Sitemap
+
+Sitemap: https://tu-dominio.com/sitemap.xml
