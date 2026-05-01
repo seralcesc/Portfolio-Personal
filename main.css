@@ -561,7 +561,6 @@ button {
 }
 .education-card:hover {
   border-color: var(--accent-red);
-  transform: translateX(10px);
 }
 
 .education-card__image-container {
@@ -595,7 +594,8 @@ button {
 
 .education-card__status {
   position: absolute;
-  top: 2rem;
+  top: 15%;
+  /* transform: translateY(-50%); */
   right: 2rem;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -621,11 +621,11 @@ button {
     font-size: 0.8rem;
   }
   .education-card__status {
-    position: relative;
-    top: 0;
-    right: 0;
-    align-self: flex-start;
-    margin-bottom: 1rem;
+    position: static;
+    display: inline-block;
+    transform: none;
+    margin-bottom: 1.2rem; /* Espacio con el título */
+    align-self: center;
   }
 }
 
