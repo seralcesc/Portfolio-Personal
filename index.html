@@ -35,7 +35,7 @@
     <meta name="twitter:title" content="S.Alcántara | Desarrollador Web" />
     <meta
       name="twitter:description"
-      content="Eficiencia, Sostenibilidad y Accesibilidad nativa."
+      content="Eficiencia, Sostenibilidad y Accesibilidad."
     />
 
     <!-- --- Datos Estructurados (JSON-LD) --- -->
@@ -97,22 +97,21 @@
         <ul class="sidebar__nav">
           <li><a href="#hero" class="sidebar__link">01 // Inicio</a></li>
           <li>
-            <a href="#proyectos" class="sidebar__link"
-              >02 // Casos de Estudio</a
+            <a href="#proyectos" class="sidebar__link">02 // Proyectos</a>
+          </li>
+          <li>
+            <a href="#skills" class="sidebar__link"
+              >03 // Stack Tech. & Valores</a
             >
           </li>
           <li>
-            <a href="#skills" class="sidebar__link">03 // Arquitectura Tech</a>
-          </li>
-          <li>
-            <a href="#skills" class="sidebar__link">04 // Formación</a>
+            <a href="#formacion" class="sidebar__link">04 // Formación</a>
           </li>
           <li><a href="#contacto" class="sidebar__link">05 // Contactar</a></li>
         </ul>
       </nav>
     </dialog>
 
-    <!-- Contenedor Raíz -->
     <main>
       <!-- 3. Hero Section (Impacto visual) -->
       <section id="hero" class="hero" aria-label="Introducción">
@@ -151,7 +150,7 @@
           <article class="project-card">
             <span class="project-card__status">En Evolución</span>
             <h3 class="project-card__title">jcrisol.com | Landing Page</h3>
-            <p class="hero__text">
+            <p class="project-card__text">
               Desarrollo frontend desde cero respetando las directrices de marca
               del cliente (Strict Light Theme). Implementación semántica para
               mejorar la estructuración de contenidos y preparación de la base
@@ -162,7 +161,7 @@
           <article class="project-card">
             <span class="project-card__status">En Evolución</span>
             <h3 class="project-card__title">Portfolio Personal</h3>
-            <p class="hero__text">
+            <p class="project-card__text">
               Un portafolio responsivo hecho con HTML, CSS y JavaScript para
               mostrar mis trabajos. Diseño inmersivo basado en estándares de
               2026. Enfoque en accesibilidad (WCAG 2.1) y rendimiento
@@ -173,38 +172,38 @@
         </div>
       </section>
 
-      <!-- 5. Bento Box de Habilidades -->
+      <!-- 5. Skills Box de Habilidades -->
       <section id="skills" class="skills" aria-labelledby="title-skills">
         <h2 id="title-skills" class="section-title">Stack Técnico & Valores</h2>
 
-        <div class="bento-grid">
-          <article class="bento-item">
-            <h3 class="bento-item__title">Java</h3>
-            <p>
+        <div class="skills-grid">
+          <article class="skills-card">
+            <h3 class="skills-card__title">Java</h3>
+            <p class="skills-card__text">
               Enfoque en programación orientada a objetos, robustez del backend
               y lógica de sistemas escalables.
             </p>
           </article>
 
-          <article class="bento-item">
-            <h3 class="bento-item__title">HTML5 / CSS3 / JS</h3>
-            <p>
+          <article class="skills-card">
+            <h3 class="skills-card__title">HTML5 / CSS3 / JS</h3>
+            <p class="skills-card__text">
               Excelencia semántica y metodologías modernas (BEM, CSS Grid,
               Variables) para interfaces fluidas y ligeras.
             </p>
           </article>
 
-          <article class="bento-item">
-            <h3 class="bento-item__title">Accesibilidad (A11y)</h3>
-            <p>
+          <article class="skills-card">
+            <h3 class="skills-card__title">Accesibilidad (A11y)</h3>
+            <p class="skills-card__text">
               Compromiso nativo con WCAG. Teclado navegable, ARIA labels
               correctos y alto contraste por defecto.
             </p>
           </article>
 
-          <article class="bento-item">
-            <h3 class="bento-item__title">Sostenibilidad</h3>
-            <p>
+          <article class="skills-card">
+            <h3 class="skills-card__title">Sostenibilidad</h3>
+            <p class="skills-card__text">
               Código limpio y minimalismo funcional que reduce peticiones y
               minimiza las emisiones de CO2 por visita.
             </p>
@@ -212,33 +211,33 @@
         </div>
       </section>
 
-      <!-- FAQ (AEO Optimization) -->
+      <!-- 6. FAQ (AEO Optimization) -->
       <section id="faq" class="faq">
         <h2 class="section-title">FAQ</h2>
         <div class="faq-grid">
-          <article class="faq-item">
-            <h3 class="faq-item__title">¿Quién es Sergio Alcántara?</h3>
-            <p>
+          <article class="faq-card">
+            <h3 class="faq-card__title">¿Quién es Sergio Alcántara?</h3>
+            <p class="faq-card__text">
               Es un alumno de DAM, formándose en arquitecturas de alto
               rendimiento y sostenibilidad digital, enfocado en maximizar la
               eficiencia del código.
             </p>
           </article>
-          <article class="faq-item">
-            <h3 class="faq-item__title">
-              ¿Por qué la sostenibilidad web es clave?
+          <article class="faq-card">
+            <h3 class="faq-card__title">
+              ¿Por qué la sostenibilidad es clave?
             </h3>
-            <p>
+            <p class="faq-card__text">
               Un código eficiente reduce el consumo de energía en los servidores
               y dispositivos, mejorando simultáneamente la velocidad de carga
               (LCP) y el SEO.
             </p>
           </article>
-          <article class="faq-item">
-            <h3 class="faq-item__title">
+          <article class="faq-card">
+            <h3 class="faq-card__title">
               ¿Qué tecnologías utiliza el website?
             </h3>
-            <p>
+            <p class="faq-card__text">
               El stack se basa en HTML5 semántico, CSS modular (BEM) y
               arquitecturas que cumplen con los Core Web Vitals de 2026 sin
               dependencias externas innecesarias.
@@ -248,7 +247,84 @@
       </section>
     </main>
 
-    <!-- 6. Footer  -->
+    <!-- 7. Formación -->
+    <section id="formacion" class="education">
+      <h2 class="section-title">Formación Académica</h2>
+
+      <nav class="tabs" aria-label="Categorías de formación">
+        <button class="tab-btn active" data-tab="oficial">
+          Formación Oficial
+        </button>
+        <button class="tab-btn" data-tab="complementaria">
+          Formación Complementaria
+        </button>
+      </nav>
+
+      <!-- Grid Oficial -->
+      <div id="oficial" class="education__grid active">
+        <article class="education-card">
+          <picture class="education-card__image-container">
+            <source srcset="assets/img/dam-logo.webp" type="image/webp" />
+            <img
+              src="https://via.placeholder.com/80/121212/ff003c?text=DAM"
+              alt="Logotipo oficial del ciclo DAM"
+              class="education-card__img"
+              loading="lazy"
+              width="80"
+              height="80"
+            />
+          </picture>
+          <div class="education-card__content">
+            <span class="education-card__status">En Proceso</span>
+            <h3 class="education-card__title">Técnico Superior en DAM</h3>
+            <p class="education-card__text">
+              Desarrollo de Aplicaciones Multiplataforma. Especialización en
+              entornos Java y arquitecturas cliente-servidor.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Grid Complementaria -->
+      <div id="complementaria" class="education__grid">
+        <article class="education-card">
+          <div class="education-card__image">
+            <img
+              src="https://via.placeholder.com/80/121212/8b00ff?text=WEB"
+              alt="Icono de Curso Web"
+            />
+          </div>
+          <div class="education-card__content">
+            <h3 class="education-card__title">
+              Máster en Frontend Performance
+            </h3>
+            <p class="education-card__text">
+              Optimización avanzada de tiempos de carga, Core Web Vitals y
+              renderizado eficiente.
+            </p>
+          </div>
+          <div class="education-card__status">→</div>
+        </article>
+        <article class="education-card">
+          <div class="education-card__image">
+            <img
+              src="https://via.placeholder.com/80/121212/ff003c?text=JS"
+              alt="Icono de JavaScript"
+            />
+          </div>
+          <div class="education-card__content">
+            <h3 class="education-card__title">JavaScript Moderno (ES6+)</h3>
+            <p class="education-card__text">
+              Profundización en programación asíncrona, closures y patrones de
+              diseño modernos.
+            </p>
+          </div>
+          <div class="education-card__status">→</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8. Footer  -->
     <footer class="footer" id="contacto">
       <div class="footer__copy">
         <p>
