@@ -1,4 +1,4 @@
-/* --- 1. DESIGN TOKENS (Variables CSS) --- */
+/* --- 1. ROOT --- */
 :root {
   /* Colores de Alta Saliencia y Bajo Consumo (OLED) */
   --bg-primary: #050505;
@@ -17,7 +17,7 @@
 
   /* Espaciados y Efectos */
   --gap-bento: 1.5rem;
-  --section-padding: clamp(3rem, 10vh, 8rem) 5%;
+  --section-padding: clamp(2rem, 9vh, 7rem) 5%;
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -248,7 +248,8 @@ button {
   transform: translateX(10px);
 }
 
-/* Hero Section */
+/* --- 4. HERO --- */
+
 .hero {
   min-height: 100vh;
   padding: var(--section-padding);
@@ -307,7 +308,7 @@ button {
   position: relative;
   transition: var(--transition-smooth);
   background: transparent;
-  /* El resplandor (glow) optimizado para GPU */
+  /* Resplandor (glow) optimizado para GPU */
   filter: drop-shadow(0 0 4px rgba(255, 0, 60, 0.4));
 }
 
@@ -352,11 +353,6 @@ button {
   background-color: var(--bg-surface);
   display: block;
   z-index: 1;
-  /* Placeholder styling */
-  /* max-width: 400px;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim); */
 }
 
 .hero__portrait img {
@@ -373,8 +369,12 @@ button {
   transform: scale(1.02);
 }
 
-/* 4. Galería de pryectos: Sección General */
-.projects {
+/* --- 5. SECCIONES GENERALES --- */
+
+.projects,
+.skills,
+.faq,
+.education {
   padding: var(--section-padding);
 }
 
@@ -397,7 +397,16 @@ button {
   box-shadow: 0 0 10px var(--accent-red);
 }
 
-/* Proyectos */
+.project-card__text,
+.skills-card__text,
+.faq-card__text,
+.education-card__text {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* --- 6. PROYECTOS --- */
+
 .projects__list {
   display: flex;
   flex-direction: column;
@@ -454,30 +463,23 @@ button {
   font-variation-settings: "wght" 700;
 }
 
-.project-card__text {
-  color: var(--text-dim);
-  margin-bottom: 0;
-}
+/* --- 7. SKILLS (Habilidades) - :has() CSS --- */
+/* --- --- & --- --- */
+/* --- 8. FAQ (AEO: Answer Engine Optimization) --- */
 
-/* Tech Bento (Habilidades) - :has() CSS */
-/* FAQ (AEO: Answer Engine Optimization) */
-.skills,
-.faq {
-  padding: var(--section-padding);
-}
 .faq {
   background: #0a0a0a;
 }
 
-.bento-grid,
+.skills-grid,
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--gap-bento);
 }
 
-.bento-item,
-.faq-item {
+.skills-card,
+.faq-card {
   background-color: var(--bg-surface);
   padding: 2.5rem;
   border-radius: 8px;
@@ -488,33 +490,143 @@ button {
   gap: 1rem;
 }
 
-.bento-item__title,
-.faq-item__title {
+.skills-card__title,
+.faq-card__title {
   font-size: 1.5rem;
   color: var(--accent-red);
   font-variation-settings: "wght" 600;
 }
 
-.bento-item p,
-.faq-item p {
-  color: var(--text-dim);
-  font-size: 1rem;
-}
-
 /* Efecto Foco: :has() */
 /* Si la cuadrícula tiene un elemento con hover, a los que NO tienen hover les bajamos la opacidad */
 @supports selector(:has(a)) {
-  .bento-grid:has(.bento-item:hover) .bento-item:not(:hover),
-  .faq-grid:has(.faq-item:hover) .faq-item:not(:hover) {
+  .skills-grid:has(.skills-card:hover) .skills-card:not(:hover),
+  .faq-grid:has(.faq-card:hover) .faq-card:not(:hover) {
     opacity: 0.4;
     filter: grayscale(80%);
   }
 }
 
-.bento-item:hover,
-.faq-item:hover {
+.skills-card:hover,
+.faq-card:hover {
   border-color: var(--accent-red);
   box-shadow: 0 0 20px rgba(255, 0, 60, 0.1);
+}
+
+/* --- 9. FORMACIÓN (PESTAÑAS) --- */
+
+.education {
+  background: #080808;
+}
+.tabs {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 3rem;
+}
+.tab-btn {
+  padding: 1rem 0;
+  font-variation-settings: "wght" 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+.tab-btn.active {
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+.education__grid {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.education__grid.active {
+  display: grid;
+}
+
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--bg-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+.education-card:hover {
+  border-color: var(--accent-red);
+  transform: translateX(10px);
+}
+
+.education-card__image-container {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.education-card__image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.education-card__content {
+  flex-grow: 1;
+}
+
+.education-card__title {
+  color: var(--text-main);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-variation-settings: "wght" 700;
+}
+
+.education-card__status {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-violet);
+  border: 1px solid var(--accent-violet);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .tabs {
+    gap: 1rem;
+    justify-content: center;
+  }
+  .tab-btn {
+    font-size: 0.8rem;
+  }
+  .education-card__status {
+    position: relative;
+    top: 0;
+    right: 0;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Footer */
