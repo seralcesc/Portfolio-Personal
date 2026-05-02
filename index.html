@@ -3,23 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>S.Alcántara | Portfolio</title>
+    <title>S.Alcántara | Eficiencia Digital</title>
     <meta
       name="description"
-      content="Portfolio de Sergio Alcántara, desarrollador especializado en eficiencia y arquitecturas de alto rendimiento."
+      content="Portfolio de Sergio Alcántara, desarrollador enfocado en eficiencia y arquitecturas de alto rendimiento."
     />
 
-    <!-- --- CANONICAL TAG --- -->
+    <!-- --- TIPOGRAFÍA --- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="./assets/fonts/roboto-flex.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Optimización LCP -->
+    <link
+      rel="preload"
+      href="assets/logo-bm.webp"
+      as="image"
+      fetchpriority="high"
+    />
+
+    <!-- --- GOBERNANZA TÉCNICA E IA (GEO/AEO) --- -->
+    <link rel="help" href="/llms.txt" type="text/plain" />
     <link
       rel="canonical"
       href="https://seralcesc.github.io/Portfolio-Personal/"
     />
 
-    <!-- --- META TAGS SOCIALES (Open Graph & Twitter) --- -->
+    <!-- Seguridad Trust UX -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- --- META TAGS SOCIALES (Open Graph & Twitter) (SXO + Trust UX) --- -->
+    <!-- 1. El "Qué": Definición de Identidad -->
     <meta property="og:title" content="S.Alcántara | Portfolio" />
     <meta
       property="og:description"
-      content="Arquitecturas web de alto rendimiento diseñadas para los estándares de 2026."
+      content="Arquitecturas de alto rendimiento diseñadas para los estándares de 2026."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -31,11 +55,47 @@
       content="https://seralcesc.github.io/Portfolio-Personal/assets/og-preview.webp"
     />
 
+    <!-- 2. El "Cómo": Optimización de Infraestructura -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
+
+    <!-- 3. Integración con Twitter (X) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="S.Alcántara | Desarrollador Web" />
+    <meta name="twitter:title" content="S.Alcántara | Portfolio" />
     <meta
       name="twitter:description"
       content="Eficiencia, Sostenibilidad y Accesibilidad."
+    />
+
+    <!-- --- FAVICONS ADAPTATIVOS --- -->
+    <!-- Modo claro -->
+    <link
+      rel="icon"
+      type="image/webp"
+      href="assets/logo-lm.webp"
+      media="(prefers-color-scheme: light)"
+    />
+    <!-- Modo oscuro -->
+    <link
+      rel="icon"
+      type="image/webp"
+      href="assets/logo-bm.webp"
+      media="(prefers-color-scheme: dark)"
+    />
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/logo-lm.webp" />
+
+    <!-- --- COLOR DE INTERFAZ (UI Integration) --- -->
+    <meta
+      name="theme-color"
+      content="#050505"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
     />
 
     <!-- --- Datos Estructurados (JSON-LD) --- -->
@@ -46,12 +106,17 @@
         "name": "Sergio Alcántara",
         "jobTitle": "Desarrollador Web",
         "url": "https://seralcesc.github.io/Portfolio-Personal/",
-        "image": "https:seralcesc.github.io/Portfolio-Personal/assets/photo1.webp",
+        "image": "https://seralcesc.github.io/Portfolio-Personal/assets/photo1.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "SA dev",
+          "logo": "https://seralcesc.github.io/Portfolio-Personal/assets/logo-lm.webp"
+        },
         "sameAs": [
           "https://linkedin.com/in/tu-perfil",
           "https://github.com/seralcesc"
         ],
-        "description": "Estudiante de DAM especializado en desarrollo sostenible y eficiencia frontend.",
+        "description": "Estudiante de DAM especializado en desarrollo sostenible y eficiencia.",
         "knowsAbout": [
           "Desarrollo Web",
           "Java",
@@ -62,16 +127,10 @@
       }
     </script>
 
-    <!-- Tipografía: Roboto Flex -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="main.css" />
     <script src="main.js" defer></script>
   </head>
+
   <body>
     <!-- 1. Cabecera y Navegación Principal -->
     <header class="header">
