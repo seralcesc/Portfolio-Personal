@@ -1,4 +1,13 @@
 /* --- 1. ROOT --- */
+/* Declaración de la fuente */
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("./assets/fonts/roboto-flex.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colores de Alta Saliencia y Bajo Consumo (OLED) */
   --bg-primary: #050505;
@@ -9,11 +18,13 @@
   --text-dim: #a1a1a6;
 
   /* Tipografía Fluida y Variable */
-  --font-main: "Roboto Flex", sans-serif;
+  --font-main: "Roboto Flex", system-ui, sans-serif;
+  --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   --fs-h1: clamp(2.5rem, 6vw + 1rem, 5rem);
   --fs-h2: clamp(1.8rem, 4vw + 1rem, 3rem);
   --fs-h3: clamp(1.2rem, 2vw + 1rem, 1.8rem);
-  --fs-base: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+  --fw-main: clamp(400, 350 + 0.5vw, 450);
+  --fw-headings: 700;
 
   /* Espaciados y Efectos */
   --gap-bento: 1.5rem;
@@ -40,12 +51,24 @@ html {
 
 body {
   font-family: var(--font-main);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-main);
+  font-optical-sizing: auto;
+  line-height: 1.6;
   background-color: var(--bg-primary);
   color: var(--text-main);
-  line-height: 1.6;
   overflow-x: hidden;
-  font-size: var(--fs-base);
-  font-variation-settings: "wght" 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-headings);
+  line-height: 1.1;
+  margin-block-end: 0.5em;
+  color: var(--text-main);
 }
 
 img {
