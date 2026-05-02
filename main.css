@@ -325,6 +325,11 @@ button {
   max-width: 600px;
 }
 
+.hero__text--highlight {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
 .btn-neon {
   display: inline-block;
   padding: 1rem 2.5rem;
@@ -345,6 +350,25 @@ button {
   background-color: var(--accent-red);
   color: var(--bg-primary);
   filter: drop-shadow(0 0 15px var(--accent-red));
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn-neon {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .hero__image-wrapper {
@@ -655,6 +679,66 @@ button {
     margin-bottom: 1.2rem; /* Espacio con el título */
     align-self: center;
   }
+}
+
+/* --- CONTACTO --- */
+
+.contact {
+  padding: var(--section-padding);
+  background: #0a0a0a; /* mismo tono que FAQ */
+  text-align: center;
+}
+
+.contact__container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact__text {
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact__status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.status-primary {
+  color: var(--accent-red);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.status-secondary {
+  color: var(--accent-violet);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.contact__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Variante botón secundaria */
+.btn-neon--secondary {
+  border-color: var(--accent-violet);
+  color: var(--accent-violet);
+  filter: drop-shadow(0 0 4px rgba(139, 0, 255, 0.4));
+}
+
+.btn-neon--secondary:hover {
+  background-color: var(--accent-violet);
+  color: var(--bg-primary);
+  filter: drop-shadow(0 0 15px var(--accent-violet));
 }
 
 /* Footer */
