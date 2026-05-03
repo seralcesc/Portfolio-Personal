@@ -289,17 +289,20 @@ button {
   position: relative;
 }
 
+.hero__content {
+  flex: 1 1 500px;
+  z-index: 2;
+}
+
 @media (max-width: 968px) {
   .hero {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
   }
-}
-
-.hero__content {
-  flex: 1 1 500px;
-  z-index: 2;
+  .hero__content {
+    width: 100%;
+  }
 }
 
 .hero__title {
@@ -325,13 +328,22 @@ button {
   max-width: 600px;
 }
 
+@media (max-width: 768px) {
+  .hero__text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .hero__text--highlight {
   color: var(--text-main);
   font-weight: 500;
 }
 
 .btn-neon {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem 2.5rem;
   border: 1px solid var(--accent-red);
   color: var(--accent-red);
@@ -359,10 +371,12 @@ button {
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero__actions {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero__actions .btn-neon {
