@@ -24,7 +24,7 @@
   --fs-h2: clamp(1.8rem, 4vw + 1rem, 3rem);
   --fs-h3: clamp(1.2rem, 2vw + 1rem, 1.8rem);
   --fw-main: clamp(400, 350 + 0.5vw, 450);
-  --fw-headings: 700;
+  --fw-headings: clamp(700, 600 + 2vw, 900);
 
   /* Espaciados y Efectos */
   --gap-bento: 1.5rem;
@@ -69,6 +69,20 @@ h3 {
   line-height: 1.1;
   margin-block-end: 0.5em;
   color: var(--text-main);
+  text-wrap: balance;
+  margin-block-end: 0.5em;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
 }
 
 img {
