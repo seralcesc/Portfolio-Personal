@@ -58,8 +58,8 @@
         <button
           class="menu-toggle"
           type="button"
-          aria-haspopup="dialog"
-          aria-controls="mobile-menu"
+          commandfor="mobile-menu"
+          command="show-modal"
         >
           Menú
         </button>
@@ -67,7 +67,14 @@
 
       <dialog class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu__inner">
-          <button class="mobile-menu__close" type="button">Cerrar</button>
+          <button
+            class="mobile-menu__close"
+            type="button"
+            commandfor="mobile-menu"
+            command="close"
+          >
+            Cerrar
+          </button>
 
           <nav aria-label="Navegación móvil">
             <ul class="mobile-menu__list">
