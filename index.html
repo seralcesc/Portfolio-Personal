@@ -24,12 +24,96 @@
   </head>
 
   <body>
-    <header>
-      <!-- Navegación principal -->
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a
+          class="site-brand"
+          href="#inicio"
+          aria-label="Sergio Alcántara, inicio"
+        >
+          S.ALCÁNTARA
+        </a>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+          <ul class="site-nav__list">
+            <li>
+              <a href="#proyectos">Proyectos</a>
+            </li>
+            <li>
+              <a href="#perfil">Perfil</a>
+            </li>
+            <li>
+              <a href="#stack">Stack</a>
+            </li>
+            <li>
+              <a href="#formacion">Formación</a>
+            </li>
+            <li>
+              <a href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="mobile-menu"
+        >
+          Menú
+        </button>
+      </div>
+
+      <dialog class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__inner">
+          <button class="mobile-menu__close" type="button">Cerrar</button>
+
+          <nav aria-label="Navegación móvil">
+            <ul class="mobile-menu__list">
+              <li>
+                <a href="#proyectos">Proyectos</a>
+              </li>
+              <li>
+                <a href="#perfil">Perfil</a>
+              </li>
+              <li>
+                <a href="#principios">Principios</a>
+              </li>
+              <li>
+                <a href="#stack">Stack</a>
+              </li>
+              <li>
+                <a href="#aprendizaje">Learning Log</a>
+              </li>
+              <li>
+                <a href="#actualidad">Current</a>
+              </li>
+              <li>
+                <a href="#formacion">Formación</a>
+              </li>
+              <li>
+                <a href="#contacto">Contacto</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </dialog>
     </header>
 
     <main>
-      <!-- Contenido principal del portfolio -->
+      <body>
+        <header class="site-header">
+          <!-- Header -->
+        </header>
+
+        <main>
+          <!-- Hero -->
+        </main>
+
+        <footer>
+          <!-- Footer -->
+        </footer>
+      </body>
     </main>
 
     <footer>
