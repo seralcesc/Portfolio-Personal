@@ -24,6 +24,7 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#contenido"> Saltar al contenido </a>
     <header class="site-header">
       <div class="site-header__inner">
         <a
@@ -100,7 +101,7 @@
       </dialog>
     </header>
 
-    <main>
+    <main id="contenido">
       <section class="hero" id="inicio">
         <div class="hero__content">
           <p class="hero__eyebrow">DAM · En formación</p>
@@ -132,6 +133,8 @@
           <img
             src="assets/images/profile/sergio-alcantara.webp"
             alt="Retrato de Sergio Alcántara"
+            width="800"
+            height="1000"
           />
         </figure>
       </section>
@@ -380,25 +383,25 @@
         </div>
 
         <div class="stack__groups">
-          <section class="stack-group" aria-labelledby="stack-programming">
+          <div class="stack-group" aria-labelledby="stack-programming">
             <h3 id="stack-programming">Programación</h3>
 
             <ul>
               <li>Java</li>
               <li>Python</li>
             </ul>
-          </section>
+          </div>
 
-          <section class="stack-group" aria-labelledby="stack-data">
+          <div class="stack-group" aria-labelledby="stack-data">
             <h3 id="stack-data">Datos</h3>
 
             <ul>
               <li>SQL</li>
               <li>Bases de datos</li>
             </ul>
-          </section>
+          </div>
 
-          <section class="stack-group" aria-labelledby="stack-web">
+          <div class="stack-group" aria-labelledby="stack-web">
             <h3 id="stack-web">Web</h3>
 
             <ul>
@@ -406,9 +409,9 @@
               <li>CSS</li>
               <li>JavaScript</li>
             </ul>
-          </section>
+          </div>
 
-          <section class="stack-group" aria-labelledby="stack-tools">
+          <div class="stack-group" aria-labelledby="stack-tools">
             <h3 id="stack-tools">Herramientas</h3>
 
             <ul>
@@ -417,7 +420,7 @@
               <li>Visual Studio Code</li>
               <li>Apache NetBeans</li>
             </ul>
-          </section>
+          </div>
         </div>
       </section>
 
