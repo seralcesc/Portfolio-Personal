@@ -108,3 +108,18 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+/* =========================
+   Header — Mobile
+   ========================= */
+
+@media (width < 48rem) {
+  .site-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+}
