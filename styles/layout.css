@@ -1,0 +1,52 @@
+/* Page container */
+.site-header__inner,
+.hero,
+.projects,
+.profile,
+.principles,
+.stack,
+.learning-log,
+.current,
+.education,
+.contact,
+.site-footer__inner {
+  width: min(
+    calc(100% - (var(--container-padding) * 2)),
+    var(--container-width)
+  );
+  margin-inline: auto;
+}
+
+/* Main sections */
+main > section {
+  padding-block: clamp(var(--space-3xl), 8vw, var(--space-5xl));
+}
+
+/* Section headers */
+.projects__header,
+.profile__header,
+.principles__header,
+.stack__header,
+.learning-log__header,
+.current__header,
+.education__header,
+.contact__header {
+  margin-block-end: clamp(var(--space-xl), 5vw, var(--space-3xl));
+}
+
+/* Generic content grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* Full-width content */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Text measure */
+.prose {
+  max-width: var(--measure-text);
+}
