@@ -587,17 +587,24 @@
 
 @media (max-width: 48rem) {
   .projects__header {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--space-lg);
   }
 
-  .projects__eyebrow,
-  .projects__title,
-  .projects__intro {
-    grid-column: 1;
+  .projects__eyebrow {
+    grid-column: 1 / 4;
+  }
+
+  .projects__title {
+    grid-column: 1 / -1;
   }
 
   .projects__intro {
-    margin-block-start: var(--space-md);
+    grid-column: 2 / -1;
+
+    max-width: none;
+    margin-block-start: var(--space-sm);
   }
 
   .projects__list {
@@ -606,34 +613,97 @@
 
   .project {
     grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    gap: var(--space-md);
+  }
+
+  .project__content,
+  .project:nth-child(even) .project__content {
+    display: contents;
+  }
+
+  .project__meta {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin-block-end: 0;
+  }
+
+  .project__title {
+    grid-column: 1;
+    grid-row: 2;
+
+    margin-block-end: 0;
   }
 
   .project__media,
   .project:nth-child(even) .project__media {
     grid-column: 1;
-    order: 1;
-  }
+    grid-row: 3;
 
-  .project__content,
-  .project:nth-child(even) .project__content {
-    grid-column: 1;
-    order: 2;
-  }
-
-  .project__media {
     width: 100%;
+
+    order: initial;
   }
 
-  .project__content {
-    max-width: 36rem;
+  .project__description {
+    grid-column: 1;
+    grid-row: 5;
+
+    margin-block-start: var(--space-sm);
   }
 
   .project__stack {
+    grid-column: 1;
+    grid-row: 4;
+
+    justify-content: center;
+
+    margin-block-start: 0;
+
     gap: var(--space-sm) var(--space-lg);
+
+    text-align: center;
   }
 
   .project__links {
+    grid-column: 1;
+    grid-row: 6;
+
     gap: var(--space-lg);
+
+    margin-block-start: var(--space-sm);
+  }
+
+  .project__links a {
+    position: relative;
+    display: inline-block;
+
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .project__links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.2rem;
+
+    height: 1px;
+    background: var(--color-accent);
+
+    transform: none;
+  }
+
+  .project__links a:hover::after,
+  .project__links a:focus-visible::after {
+    transform: none;
+  }
+
+  .project + .project {
+    border-top: var(--border-thin);
+
+    padding-block-start: var(--space-xl);
   }
 }
