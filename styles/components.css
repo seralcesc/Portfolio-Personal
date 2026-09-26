@@ -570,3 +570,70 @@
 .project__links span {
   color: var(--color-text-muted);
 }
+
+.project:nth-child(even) .project__media {
+  grid-column: 6 / -1;
+  order: 2;
+}
+
+.project:nth-child(even) .project__content {
+  grid-column: 1 / 5;
+  order: 1;
+}
+
+/* =========================
+   Selected Work — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .projects__header {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__eyebrow,
+  .projects__title,
+  .projects__intro {
+    grid-column: 1;
+  }
+
+  .projects__intro {
+    margin-block-start: var(--space-md);
+  }
+
+  .projects__list {
+    gap: var(--space-4xl);
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .project__media,
+  .project:nth-child(even) .project__media {
+    grid-column: 1;
+    order: 1;
+  }
+
+  .project__content,
+  .project:nth-child(even) .project__content {
+    grid-column: 1;
+    order: 2;
+  }
+
+  .project__media {
+    width: 100%;
+  }
+
+  .project__content {
+    max-width: 36rem;
+  }
+
+  .project__stack {
+    gap: var(--space-sm) var(--space-lg);
+  }
+
+  .project__links {
+    gap: var(--space-lg);
+  }
+}
