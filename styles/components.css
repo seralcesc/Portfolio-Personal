@@ -357,3 +357,52 @@
 .hero__actions a:focus-visible {
   color: var(--color-text);
 }
+
+/* =========================
+   Hero — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+
+    min-height: auto;
+
+    padding-block: clamp(var(--space-2xl), 10vw, var(--space-3xl))
+      var(--space-3xl);
+  }
+
+  .hero__content {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .hero__title {
+    max-width: 8ch;
+  }
+
+  .hero__subtitle {
+    margin-block-start: var(--space-xl);
+  }
+
+  .hero__description {
+    max-width: 36rem;
+  }
+
+  .hero__actions {
+    gap: var(--space-lg);
+  }
+
+  .hero__media {
+    grid-column: 1;
+    grid-row: auto;
+
+    width: min(100%, 30rem);
+
+    margin-block-start: var(--space-2xl);
+    margin-inline-start: auto;
+
+    justify-self: end;
+  }
+}
