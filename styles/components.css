@@ -307,3 +307,43 @@
 
   border-radius: var(--radius-xs);
 }
+
+.hero__actions a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  min-height: 2.75rem;
+
+  font-size: 0.875rem;
+  font-weight: var(--weight-semibold);
+
+  text-decoration: none;
+}
+
+.hero__actions a:first-child {
+  color: var(--color-text);
+}
+
+.hero__actions a:first-child::after {
+  content: "";
+
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0.5rem;
+
+  height: 1px;
+
+  background: var(--color-accent);
+}
+
+.hero__actions a:last-child {
+  color: var(--color-text-secondary);
+}
+
+.hero__actions a:hover,
+.hero__actions a:focus-visible {
+  color: var(--color-text);
+}
