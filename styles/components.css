@@ -958,3 +958,59 @@
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
+
+/* =========================
+   Principles — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .principles__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+
+    margin-block-end: var(--space-xl);
+  }
+
+  .principles__eyebrow,
+  .principles__title {
+    grid-column: 1;
+  }
+
+  .principle {
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-md);
+
+    padding-block: var(--space-lg);
+  }
+
+  .principle__number {
+    grid-column: 1;
+
+    padding-block-start: 0.2rem;
+  }
+
+  .principle__content {
+    grid-column: 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .principle__content h3,
+  .principle__content p {
+    grid-column: 1;
+  }
+
+  .principle__content h3 {
+    font-size: clamp(1.125rem, 6vw, 1.5rem);
+    line-height: 1.2;
+  }
+
+  .principle__content p {
+    max-width: none;
+
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+}
