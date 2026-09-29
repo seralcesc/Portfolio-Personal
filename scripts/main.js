@@ -63,3 +63,43 @@ projectGalleries.forEach((project) => {
     showImage(nextIndex);
   });
 });
+
+/* =========================
+   Education tabs
+   ========================= */
+
+const educationTabs = document.querySelectorAll(".education__tab");
+const educationPanels = document.querySelectorAll(".education-group");
+
+educationTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    activateEducationTab(index);
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+      return;
+    }
+
+    event.preventDefault();
+
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextIndex =
+      (index + direction + educationTabs.length) % educationTabs.length;
+
+    activateEducationTab(nextIndex);
+    educationTabs[nextIndex].focus();
+  });
+});
+
+function activateEducationTab(activeIndex) {
+  educationTabs.forEach((tab, index) => {
+    const isActive = index === activeIndex;
+
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", isActive);
+    tab.tabIndex = isActive ? 0 : -1;
+
+    educationPanels[index].classList.toggle("is-active", isActive);
+  });
+}
