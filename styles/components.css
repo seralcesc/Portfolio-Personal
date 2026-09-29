@@ -1841,9 +1841,13 @@
 .site-footer__brand {
   grid-column: 1 / 5;
 
-  display: grid;
-  align-content: start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: var(--space-xs);
+
+  justify-self: start;
+  align-self: start;
 }
 
 .site-footer__brand > a {
@@ -1868,17 +1872,30 @@
 }
 
 .site-footer__nav ul {
-  display: grid;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-sm);
 }
 
 .site-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+
   color: var(--color-text-secondary);
 
   font-size: 0.875rem;
   text-decoration: none;
 
   transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.site-footer__nav img {
+  width: 1.125rem;
+  height: 1.125rem;
+
+  opacity: 0.75;
 }
 
 .site-footer__legal {
