@@ -646,12 +646,44 @@
           <h2 class="education__title" id="education-title">Formación</h2>
         </div>
 
+        <div
+          class="education__tabs"
+          role="tablist"
+          aria-label="Tipo de formación"
+        >
+          <button
+            class="education__tab is-active"
+            type="button"
+            role="tab"
+            id="tab-official"
+            aria-selected="true"
+            aria-controls="education-official"
+            tabindex="0"
+          >
+            Oficial
+          </button>
+
+          <button
+            class="education__tab"
+            type="button"
+            role="tab"
+            id="tab-complementary"
+            aria-selected="false"
+            aria-controls="education-complementary"
+            tabindex="-1"
+          >
+            Complementaria
+          </button>
+        </div>
+
         <div class="education__content">
           <section
-            class="education-group"
-            aria-labelledby="education-official-title"
+            class="education-group is-active"
+            id="education-official"
+            role="tabpanel"
+            aria-labelledby="tab-official"
           >
-            <h3 id="education-official-title">Formación oficial</h3>
+            <h3>Formación oficial</h3>
 
             <article class="education-entry">
               <div class="education-entry__header">
@@ -670,9 +702,11 @@
 
           <section
             class="education-group"
-            aria-labelledby="education-complementary-title"
+            id="education-complementary"
+            role="tabpanel"
+            aria-labelledby="tab-complementary"
           >
-            <h3 id="education-complementary-title">Formación complementaria</h3>
+            <h3>Formación complementaria</h3>
 
             <div class="education-group__list">
               <article class="education-entry">
