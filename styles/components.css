@@ -1486,6 +1486,10 @@
    Education
    ========================= */
 
+.education__tabs {
+  display: none;
+}
+
 .education__header {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
