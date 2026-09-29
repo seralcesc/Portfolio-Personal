@@ -1578,3 +1578,103 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-xl);
 }
+
+/* =========================
+   Education — Responsive
+   ========================= */
+
+.education__tabs {
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  .education__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .education__eyebrow,
+  .education__title {
+    grid-column: 1;
+  }
+
+  .education__tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-block-end: var(--space-xl);
+
+    border-bottom: var(--border-thin);
+  }
+
+  .education__tab {
+    position: relative;
+
+    min-height: 3.5rem;
+    padding-inline: var(--space-sm);
+
+    cursor: pointer;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.8125rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.05em;
+
+    transition: color var(--duration-fast) var(--ease-standard);
+  }
+
+  .education__tab::after {
+    content: "";
+
+    position: absolute;
+    inset-inline: 0;
+    bottom: -1px;
+
+    height: 1px;
+
+    background: var(--color-accent);
+
+    transform: scaleX(0);
+    transition: transform var(--duration-normal) var(--ease-standard);
+  }
+
+  .education__tab.is-active {
+    color: var(--color-text);
+  }
+
+  .education__tab.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .education__content {
+    display: block;
+  }
+
+  .education-group {
+    grid-template-columns: 1fr;
+  }
+
+  .education-group:not(.is-active) {
+    display: none;
+  }
+
+  .education-group > h3,
+  .education-group > .education-entry,
+  .education-group__list {
+    grid-column: 1;
+  }
+
+  .education-group > h3 {
+    margin-block-end: var(--space-lg);
+  }
+
+  .education-group__list {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .education-entry__description {
+    max-width: none;
+  }
+}
