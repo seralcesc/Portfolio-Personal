@@ -1132,7 +1132,7 @@
   }
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 22rem) {
   .stack__groups {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
