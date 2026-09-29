@@ -1780,3 +1780,44 @@
     transform: translate(0.2rem, -0.2rem);
   }
 }
+
+/* =========================
+   Contact — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .contact__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .contact__eyebrow,
+  .contact__title,
+  .contact__intro {
+    grid-column: 1;
+  }
+
+  .contact__intro {
+    margin-block-start: 0;
+  }
+
+  .contact__links {
+    margin-block-start: var(--space-2xl);
+  }
+
+  .contact__links a {
+    grid-template-columns: 1fr auto;
+    gap: var(--space-md);
+
+    min-height: 4.5rem;
+    padding-inline: 0;
+
+    font-size: clamp(1.375rem, 7vw, 2rem);
+  }
+
+  .contact__links a::after {
+    grid-column: 2;
+
+    font-size: 0.875rem;
+  }
+}
