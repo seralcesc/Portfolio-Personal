@@ -1353,3 +1353,131 @@
     transition: none;
   }
 }
+
+/* =========================
+   Current
+   ========================= */
+
+.current__header {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.current__eyebrow {
+  grid-column: 1 / 4;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.current__title {
+  grid-column: 4 / 10;
+}
+
+.current__list {
+  display: grid;
+}
+
+.current__item {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(var(--space-lg), 3vw, var(--space-2xl));
+
+  padding-block: var(--space-xl);
+
+  border-top: var(--border-thin);
+}
+
+.current__item:last-child {
+  border-bottom: var(--border-thin);
+}
+
+.current__item dt {
+  grid-column: 1 / 4;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.current__item dd {
+  grid-column: 4 / -1;
+
+  color: var(--color-text);
+
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: var(--weight-medium);
+  line-height: 1.45;
+}
+
+/* =========================
+   Current — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .current__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .current__eyebrow,
+  .current__title {
+    grid-column: 1;
+  }
+
+  .current__item {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-sm);
+
+    padding-block: var(--space-lg);
+  }
+
+  .current__item dt,
+  .current__item dd {
+    grid-column: 1;
+  }
+
+  .current__item dd {
+    font-size: clamp(1.125rem, 5vw, 1.375rem);
+  }
+}
+
+/* =========================
+   Current — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .current__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .current__eyebrow,
+  .current__title {
+    grid-column: 1;
+  }
+
+  .current__item {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-sm);
+
+    padding-block: var(--space-lg);
+  }
+
+  .current__item dt,
+  .current__item dd {
+    grid-column: 1;
+  }
+
+  .current__item dd {
+    font-size: clamp(1.125rem, 5vw, 1.375rem);
+  }
+}
