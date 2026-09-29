@@ -1292,3 +1292,64 @@
     transform: scaleX(1);
   }
 }
+
+/* =========================
+   Learning Log — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .learning-log__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .learning-log__eyebrow,
+  .learning-log__title,
+  .learning-log__intro {
+    grid-column: 1;
+  }
+
+  .learning-log__intro {
+    margin-block-start: 0;
+  }
+
+  .learning-entry {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-lg);
+
+    padding-block: var(--space-xl);
+  }
+
+  .learning-entry__header,
+  .learning-entry__description,
+  .learning-entry__details,
+  .learning-entry > a {
+    grid-column: 1;
+  }
+
+  .learning-entry__header h3 {
+    max-width: 13ch;
+
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .learning-entry__description {
+    max-width: none;
+  }
+
+  .learning-entry__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .learning-entry > a {
+    justify-self: start;
+
+    margin-block-start: var(--space-sm);
+  }
+
+  .learning-entry > a::after {
+    transform: none;
+    transition: none;
+  }
+}
