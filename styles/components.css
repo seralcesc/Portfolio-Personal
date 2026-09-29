@@ -1868,7 +1868,7 @@
 }
 
 .site-footer__nav {
-  grid-column: 6 / 9;
+  grid-column: 5 / 9;
 }
 
 .site-footer__nav ul {
@@ -1876,6 +1876,10 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-sm);
+}
+
+.site-footer__separator {
+  color: var(--color-text-muted);
 }
 
 .site-footer__nav a {
