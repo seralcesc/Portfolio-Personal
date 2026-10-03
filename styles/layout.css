@@ -33,20 +33,3 @@ main > section {
 .contact__header {
   margin-block-end: clamp(var(--space-xl), 5vw, var(--space-3xl));
 }
-
-/* Generic content grid */
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(1rem, 2vw, 2rem);
-}
-
-/* Full-width content */
-.full-width {
-  grid-column: 1 / -1;
-}
-
-/* Text measure */
-.prose {
-  max-width: var(--measure-text);
-}
