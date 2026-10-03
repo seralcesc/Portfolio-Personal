@@ -29,7 +29,6 @@ main > section {
 .stack__header,
 .learning-log__header,
 .current__header,
-.education__header,
-.contact__header {
+.education__header {
   margin-block-end: clamp(var(--space-xl), 5vw, var(--space-3xl));
 }
