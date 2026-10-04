@@ -1935,3 +1935,30 @@
     text-align: left;
   }
 }
+
+/* =========================
+   Reduced Motion
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link,
+  .site-nav a,
+  .site-nav a::after,
+  .mobile-menu__list a,
+  .hero__actions a:first-child::after,
+  .project__media img,
+  .project__gallery-button,
+  .project__links a::after,
+  .learning-entry > a::after,
+  .education__tab,
+  .education__tab::after,
+  .contact__links a,
+  .contact__links a::after,
+  .site-footer__brand > a,
+  .site-footer__nav a {
+    transition: none;
+  }
+
+  .project:hover .project__media img {
+    transform: none;
+  }
+}
