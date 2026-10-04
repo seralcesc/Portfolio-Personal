@@ -627,10 +627,13 @@
     transform: scale(1.015);
   }
 
-  .project__links a:hover::after,
-  .project__links a:focus-visible::after {
+  .project__links a:hover::after {
     transform: scaleX(1);
   }
+}
+
+.project__links a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 /* =========================
@@ -1281,10 +1284,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .learning-entry > a:hover::after,
-  .learning-entry > a:focus-visible::after {
+  .learning-entry > a:hover::after {
     transform: scaleX(1);
   }
+}
+
+.learning-entry > a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 /* =========================
@@ -1722,16 +1728,23 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .contact__links a:hover,
-  .contact__links a:focus-visible {
+  .contact__links a:hover {
     padding-inline-start: var(--space-sm);
   }
 
-  .contact__links a:hover::after,
-  .contact__links a:focus-visible::after {
+  .contact__links a:hover::after {
     color: var(--color-accent);
     transform: translate(0.2rem, -0.2rem);
   }
+}
+
+.contact__links a:focus-visible {
+  padding-inline-start: var(--space-sm);
+}
+
+.contact__links a:focus-visible::after {
+  color: var(--color-accent);
+  transform: translate(0.2rem, -0.2rem);
 }
 
 /* =========================
@@ -1868,11 +1881,14 @@
 
 @media (hover: hover) and (pointer: fine) {
   .site-footer__brand > a:hover,
-  .site-footer__brand > a:focus-visible,
-  .site-footer__nav a:hover,
-  .site-footer__nav a:focus-visible {
+  .site-footer__nav a:hover {
     color: var(--color-text);
   }
+}
+
+.site-footer__brand > a:focus-visible,
+.site-footer__nav a:focus-visible {
+  color: var(--color-text);
 }
 
 /* =========================
@@ -1917,5 +1933,32 @@
     border-top: var(--border-thin);
 
     text-align: left;
+  }
+}
+
+/* =========================
+   Reduced Motion
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link,
+  .site-nav a,
+  .site-nav a::after,
+  .mobile-menu__list a,
+  .hero__actions a:first-child::after,
+  .project__media img,
+  .project__gallery-button,
+  .project__links a::after,
+  .learning-entry > a::after,
+  .education__tab,
+  .education__tab::after,
+  .contact__links a,
+  .contact__links a::after,
+  .site-footer__brand > a,
+  .site-footer__nav a {
+    transition: none;
+  }
+
+  .project:hover .project__media img {
+    transform: none;
   }
 }
