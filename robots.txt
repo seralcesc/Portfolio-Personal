@@ -1,24 +1,4 @@
-Sergio Alcántara - Robots.txt
-
 User-agent: *
 Allow: /
-
-Bloqueo de directorios sensibles
-
-Disallow: /admin/
-Disallow: /config/
-
-Optimización para Agentes de IA (Cualquier IA de búsqueda leerá tu web)
-
-User-agent: Googlebot
-Allow: /
-User-agent: GPTBot
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Claude-Web
-Allow: /
-
-Referencia al Mapa del Sitio
 
 Sitemap: https://seralcesc.github.io/Portfolio-Personal/sitemap.xml
