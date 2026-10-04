@@ -339,7 +339,7 @@
 
   background: var(--color-accent);
 
-  transform: scaleX(1);
+  transform: scaleX(0.65);
   transform-origin: left;
 
   transition: transform var(--duration-normal) var(--ease-standard);
@@ -347,7 +347,7 @@
 
 .hero__actions a:first-child:hover::after,
 .hero__actions a:first-child:focus-visible::after {
-  transform: scaleX(1.12);
+  transform: scaleX(1);
 }
 
 .hero__actions a:last-child {
@@ -444,7 +444,7 @@
 }
 
 .projects__intro {
-  grid-column: 8 / -1;
+  grid-column: 4 / 10;
 
   margin-block-start: var(--space-lg);
 
@@ -1163,7 +1163,7 @@
 }
 
 .learning-log__intro {
-  grid-column: 8 / -1;
+  grid-column: 4 / 10;
 
   margin-block-start: var(--space-lg);
 
