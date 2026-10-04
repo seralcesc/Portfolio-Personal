@@ -300,6 +300,7 @@
 
 .hero__media img {
   width: 100%;
+  aspect-ratio: 800 / 1000;
   max-height: 42rem;
 
   object-fit: cover;
