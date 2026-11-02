@@ -512,9 +512,12 @@
 
   display: grid;
 
+  padding: var(--space-xs);
   overflow: hidden;
 
-  border-radius: var(--radius-xs);
+  border: var(--border-thin);
+  border-radius: calc(var(--radius-md) * 2);
+
   background: var(--color-surface);
 }
 
@@ -525,6 +528,7 @@
   aspect-ratio: 16 / 10;
 
   object-fit: cover;
+  border-radius: var(--radius-md);
 }
 
 .project__gallery-controls {
@@ -737,6 +741,7 @@
     grid-row: 3;
 
     width: 100%;
+    padding: 0.375rem;
   }
 
   .project__gallery-controls,
