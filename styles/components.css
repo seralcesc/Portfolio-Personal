@@ -480,6 +480,8 @@
   grid-column: 1 / 8;
   grid-row: 1;
 
+  display: grid;
+
   overflow: hidden;
 
   border-radius: var(--radius-xs);
@@ -487,12 +489,12 @@
 }
 
 .project__media img {
+  grid-area: 1 / 1;
+
   width: 100%;
   aspect-ratio: 16 / 10;
 
   object-fit: cover;
-
-  transition: transform var(--duration-slow) var(--ease-standard);
 }
 
 .project__gallery-controls {
@@ -500,9 +502,10 @@
   grid-row: 2;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-xl);
 
   color: var(--color-text-muted);
 
@@ -530,6 +533,9 @@
   color: var(--color-text-secondary);
 
   transition: color var(--duration-fast) var(--ease-standard);
+
+  font-size: 1.75rem;
+  line-height: 1;
 }
 
 .project__gallery-button:hover,
@@ -634,10 +640,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project:hover .project__media img {
-    transform: scale(1.015);
-  }
-
   .project__links a:hover::after {
     transform: scaleX(1);
   }
@@ -1984,7 +1986,6 @@
   .site-nav a::after,
   .mobile-menu__list a,
   .hero__actions a:first-child::after,
-  .project__media img,
   .project__gallery-button,
   .project__links a::after,
   .learning-entry > a::after,
@@ -1999,9 +2000,5 @@
   .site-footer__brand > a,
   .site-footer__nav a {
     transition: none;
-  }
-
-  .project:hover .project__media img {
-    transform: none;
   }
 }

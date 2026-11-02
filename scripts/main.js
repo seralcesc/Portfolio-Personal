@@ -37,17 +37,47 @@ projectGalleries.forEach((project) => {
   }
 
   let currentIndex = 0;
+  let isAnimating = false;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   controls.hidden = false;
   totalCounter.textContent = String(images.length).padStart(2, "0");
 
-  const showImage = (index) => {
-    images[currentIndex].hidden = true;
+  const showImage = async (index) => {
+    if (isAnimating || index === currentIndex) {
+      return;
+    }
+
+    const currentImage = images[currentIndex];
+    const nextImage = images[index];
+
+    if (reducedMotion.matches) {
+      currentImage.hidden = true;
+      nextImage.hidden = false;
+    } else {
+      isAnimating = true;
+
+      // Mostrar la siguiente imagen debajo de la actual.
+      nextImage.hidden = false;
+
+      // Mantener la imagen actual por encima durante el fundido.
+      currentImage.style.zIndex = "2";
+      nextImage.style.zIndex = "1";
+
+      await currentImage.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 400,
+        easing: "ease-in-out",
+      }).finished;
+
+      currentImage.hidden = true;
+      currentImage.style.zIndex = "";
+      nextImage.style.zIndex = "";
+
+      isAnimating = false;
+    }
 
     currentIndex = index;
-
-    images[currentIndex].hidden = false;
-
     currentCounter.textContent = String(currentIndex + 1).padStart(2, "0");
   };
 
