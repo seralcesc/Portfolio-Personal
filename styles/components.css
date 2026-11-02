@@ -316,8 +316,6 @@
 }
 
 .hero__actions a {
-  position: relative;
-
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -326,43 +324,56 @@
 
   font-size: 0.875rem;
   font-weight: var(--weight-semibold);
-
   text-decoration: none;
+
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
 }
 
 .hero__actions a:first-child {
+  padding: var(--space-sm) var(--space-lg);
+
+  border: 1px solid
+    color-mix(in oklch, var(--color-accent) 60%, var(--color-bg));
+  border-radius: var(--radius-xs);
+
+  background-color: color-mix(
+    in oklch,
+    var(--color-accent) 5%,
+    var(--color-bg)
+  );
   color: var(--color-text);
 }
 
-.hero__actions a:first-child::after {
-  content: "";
+.hero__actions a:first-child:hover,
+.hero__actions a:first-child:focus-visible {
+  border-color: var(--color-accent);
 
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0.5rem;
-
-  height: 1px;
-
-  background: var(--color-accent);
-
-  transform: scaleX(0.65);
-  transform-origin: left;
-
-  transition: transform var(--duration-normal) var(--ease-standard);
-}
-
-.hero__actions a:first-child:hover::after,
-.hero__actions a:first-child:focus-visible::after {
-  transform: scaleX(1);
+  background-color: color-mix(
+    in oklch,
+    var(--color-accent) 13%,
+    var(--color-bg)
+  );
 }
 
 .hero__actions a:last-child {
   color: var(--color-text-secondary);
 }
 
-.hero__actions a:hover,
-.hero__actions a:focus-visible {
+.hero__actions a:last-child:hover,
+.hero__actions a:last-child:focus-visible {
   color: var(--color-text);
+}
+
+.hero__external-icon {
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.hero__actions a:last-child:hover .hero__external-icon,
+.hero__actions a:last-child:focus-visible .hero__external-icon {
+  color: var(--color-accent);
 }
 
 /* =========================
@@ -425,12 +436,38 @@
 }
 
 /* =========================
-   Selected Work
+   Shared section
    ========================= */
 
 .section-number {
   color: var(--color-accent-3);
 }
+
+.section-eyebrow {
+  color: var(--color-text-muted);
+
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::after {
+  content: "";
+
+  display: inline-block;
+  width: clamp(1rem, 2vw, 2rem);
+  height: 1px;
+  margin-inline-start: var(--space-xs);
+
+  background: var(--color-border);
+  vertical-align: middle;
+}
+
+/* =========================
+   Selected Work
+   ========================= */
 
 .projects__header {
   display: grid;
@@ -440,13 +477,6 @@
 
 .projects__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .projects__title {
@@ -775,13 +805,6 @@
 
 .profile__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .profile__title {
@@ -906,13 +929,6 @@
 
 .principles__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .principles__title {
@@ -1038,13 +1054,6 @@
 
 .stack__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .stack__title {
@@ -1162,13 +1171,6 @@
 
 .learning-log__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .learning-log__title {
@@ -1377,13 +1379,6 @@
 
 .current__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .current__title {
@@ -1482,13 +1477,6 @@
 
 .education__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .education__title {
@@ -1683,13 +1671,6 @@
 
 .contact__eyebrow {
   grid-column: 1 / 4;
-
-  color: var(--color-text-muted);
-
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .contact__title {
@@ -1985,7 +1966,8 @@
   .site-nav a,
   .site-nav a::after,
   .mobile-menu__list a,
-  .hero__actions a:first-child::after,
+  .hero__actions a,
+  .hero__external-icon,
   .project__gallery-button,
   .project__links a::after,
   .learning-entry > a::after,
