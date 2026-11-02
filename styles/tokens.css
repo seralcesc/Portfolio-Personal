@@ -28,8 +28,12 @@
 
   --color-crimson: oklch(63% 0.27 20);
   --color-violet: oklch(57% 0.28 305);
+  --color-electric-blue: oklch(70% 0.2 250);
+  --color-electric-yellow: oklch(82% 0.18 100);
 
   --color-accent: var(--color-crimson);
+  --color-accent-2: var(--color-violet);
+  --color-accent-3: var(--color-electric-yellow);
 
   /* Derived colors */
   --color-border-accent: color-mix(
