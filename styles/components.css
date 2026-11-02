@@ -1734,36 +1734,56 @@
     padding-inline-start var(--duration-normal) var(--ease-standard);
 }
 
-.contact__links a::after {
-  content: "↗";
+.contact__icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
 
   color: var(--color-text-muted);
 
-  font-size: 0.875rem;
-
-  transition:
-    color var(--duration-fast) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
+  transition: color var(--duration-normal) var(--ease-standard);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .contact__links a:hover {
-    padding-inline-start: var(--space-sm);
-  }
-
-  .contact__links a:hover::after {
-    color: var(--color-accent);
-    transform: translate(0.2rem, -0.2rem);
-  }
-}
-
-.contact__links a:focus-visible {
-  padding-inline-start: var(--space-sm);
-}
-
-.contact__links a:focus-visible::after {
+.contact__links a:hover .contact__icon,
+.contact__links a:focus-visible .contact__icon {
   color: var(--color-accent);
-  transform: translate(0.2rem, -0.2rem);
+}
+
+.contact__mail-flap,
+.contact__mail-open {
+  transition: opacity var(--duration-normal) var(--ease-standard);
+}
+
+.contact__mail-open {
+  opacity: 0;
+}
+
+.contact__links a:hover .contact__mail-flap,
+.contact__links a:focus-visible .contact__mail-flap {
+  opacity: 0;
+}
+
+.contact__links a:hover .contact__mail-open,
+.contact__links a:focus-visible .contact__mail-open {
+  opacity: 1;
+}
+
+.contact__pdf-sheet {
+  transition: d var(--duration-normal) var(--ease-standard);
+}
+
+.contact__pdf-fold {
+  transition: opacity var(--duration-normal) var(--ease-standard);
+}
+
+.contact__links a:hover .contact__pdf-sheet,
+.contact__links a:focus-visible .contact__pdf-sheet {
+  d: path("M7 2 H26 V30 H7 Z");
+}
+
+.contact__links a:hover .contact__pdf-fold,
+.contact__links a:focus-visible .contact__pdf-fold {
+  opacity: 0;
 }
 
 /* =========================
@@ -1971,7 +1991,11 @@
   .education__tab,
   .education__tab::after,
   .contact__links a,
-  .contact__links a::after,
+  .contact__icon,
+  .contact__mail-flap,
+  .contact__mail-open,
+  .contact__pdf-sheet,
+  .contact__pdf-fold,
   .site-footer__brand > a,
   .site-footer__nav a {
     transition: none;
