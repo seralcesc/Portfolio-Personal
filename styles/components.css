@@ -248,6 +248,10 @@
   max-width: 9ch;
 }
 
+.hero__initial {
+  color: var(--color-accent);
+}
+
 .hero__subtitle {
   margin-block-start: var(--space-2xl);
 
@@ -293,7 +297,9 @@
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(to left, transparent 70%, var(--color-bg) 100%);
+  background:
+    linear-gradient(to bottom, var(--color-bg) 0%, transparent 20%),
+    linear-gradient(to left, transparent 70%, var(--color-bg) 100%);
 
   pointer-events: none;
 }
@@ -421,6 +427,10 @@
 /* =========================
    Selected Work
    ========================= */
+
+.section-number {
+  color: var(--color-accent-3);
+}
 
 .projects__header {
   display: grid;
@@ -934,6 +944,7 @@
   font-size: 0.75rem;
   font-weight: var(--weight-medium);
   letter-spacing: 0.08em;
+  text-align: right;
 }
 
 .principle__content {
@@ -1404,6 +1415,7 @@
   font-weight: var(--weight-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .current__item dd {
@@ -1441,6 +1453,10 @@
   .current__item dt,
   .current__item dd {
     grid-column: 1;
+  }
+
+  .current__item dt {
+    text-align: left;
   }
 
   .current__item dd {
@@ -1501,6 +1517,7 @@
   font-weight: var(--weight-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .education-group > .education-entry,
@@ -1629,6 +1646,7 @@
 
   .education-group > h3 {
     margin-block-end: var(--space-lg);
+    text-align: left;
   }
 
   .education-group__list {
