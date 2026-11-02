@@ -1425,27 +1425,36 @@
 
 .education__content {
   display: grid;
-  gap: var(--space-3xl);
+  gap: var(--space-lg);
 }
 
 .education-group {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(var(--space-lg), 3vw, var(--space-2xl));
+
+  padding: var(--space-lg);
+
+  border: var(--border-thin);
+  border-inline-start: 2px solid var(--color-accent-2);
+  border-radius: calc(var(--radius-sm) * 2);
+
+  background: var(--color-surface);
+}
+
+#education-complementary {
+  border-inline-start-color: var(--color-accent);
 }
 
 .education-group > h3 {
   grid-column: 1 / 4;
 
-  padding-block-start: var(--space-sm);
+  color: var(--color-text-secondary);
 
-  border-top: var(--border-thin);
-
-  color: var(--color-text-muted);
-
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: var(--weight-medium);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   text-align: right;
 }
@@ -1453,12 +1462,6 @@
 .education-group > .education-entry,
 .education-group__list {
   grid-column: 4 / -1;
-}
-
-.education-entry {
-  padding-block-start: var(--space-sm);
-
-  border-top: var(--border-thin);
 }
 
 .education-entry__meta {
@@ -1470,6 +1473,10 @@
   font-weight: var(--weight-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.education-entry__status {
+  color: color-mix(in oklch, var(--color-accent-2) 80%, var(--color-text));
 }
 
 .education-entry h4 {
@@ -1540,7 +1547,7 @@
     inset-inline: 0;
     bottom: -1px;
 
-    height: 1px;
+    height: 2px;
 
     background: var(--color-accent);
 
@@ -1562,6 +1569,15 @@
 
   .education-group {
     grid-template-columns: 1fr;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .education-entry {
+    padding-block-start: var(--space-sm);
+    border-top: var(--border-thin);
   }
 
   .education-group:not(.is-active) {
@@ -1575,8 +1591,7 @@
   }
 
   .education-group > h3 {
-    margin-block-end: var(--space-lg);
-    text-align: left;
+    display: none;
   }
 
   .education-group__list {
