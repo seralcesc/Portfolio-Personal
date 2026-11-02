@@ -6,7 +6,6 @@
 .principles,
 .stack,
 .learning-log,
-.current,
 .education,
 .contact,
 .site-footer__inner {
@@ -28,7 +27,6 @@ main > section {
 .principles__header,
 .stack__header,
 .learning-log__header,
-.current__header,
 .education__header {
   margin-block-end: clamp(var(--space-xl), 5vw, var(--space-3xl));
 }
