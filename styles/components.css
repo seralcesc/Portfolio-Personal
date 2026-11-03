@@ -2143,6 +2143,7 @@
   .contact__pdf-sheet,
   .contact__pdf-fold,
   .contact__links a::before,
+  .contact__links a::after,
   .contact__links a > span,
   .site-footer__brand > a,
   .site-footer__nav a {
