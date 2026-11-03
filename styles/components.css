@@ -460,7 +460,8 @@
   }
 
   /* Contenido que retrocede */
-  :is(.principles, .contact) > .section-depth > .section-depth__content,
+  .principles > .section-depth > .section-depth__content,
+  .contact__header,
   .profile__header,
   .profile__text,
   .profile__highlight,
@@ -491,7 +492,7 @@
     }
   }
 
-  /* Activación desde cualquier parte de la sección */
+  /* Hundimiento y sombras de las tarjetas */
   main > section:hover > .section-depth {
     --depth-transform: translateY(2px) scale(0.99);
 
@@ -502,6 +503,16 @@
     box-shadow:
       inset 0 12px 24px -9px rgb(0 0 0 / 95%),
       inset 0 -1px 0 rgb(255 255 255 / 4%);
+  }
+
+  /* Sombras de las letras y los iconos de Contacto */
+  .contact:hover > .section-depth {
+    --contact-letter-shadow:
+      0 12px 3px rgb(0 0 0 / 100%), 0 24px 9px rgb(0 0 0 / 95%),
+      0 34px 18px rgb(0 0 0 / 85%);
+
+    --contact-icon-shadow: drop-shadow(0 12px 3px rgb(0 0 0 / 100%))
+      drop-shadow(0 22px 8px rgb(0 0 0 / 90%));
   }
 }
 
@@ -1720,15 +1731,31 @@
   min-height: 5.5rem;
   padding: var(--space-md) 0;
 
-  border-block: var(--border-thin);
+  border: 0;
 
   color: var(--color-text);
   text-decoration: none;
 
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: var(--weight-medium);
+}
 
-  transition: border-color var(--duration-normal) var(--ease-standard);
+/* Las líneas se dibujan en una capa independiente */
+.contact__links a::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  border-block: var(--border-thin);
+
+  transform: var(--depth-transform, none);
+
+  transition:
+    transform var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    filter var(--duration-normal) var(--ease-standard);
 }
 
 .contact__links a + a {
@@ -1738,10 +1765,31 @@
 .contact__links a:hover,
 .contact__links a:focus-visible {
   z-index: 1;
+  color: var(--color-text);
+}
+
+.contact__links a:hover::before,
+.contact__links a:focus-visible::before {
   border-block-color: var(--color-accent);
+
+  filter: drop-shadow(
+    0 0 5px color-mix(in srgb, var(--color-accent) 40%, transparent)
+  );
+}
+
+/* Letras suspendidas: conservan su posición y su blanco */
+.contact__links a > span {
+  position: relative;
+
+  color: var(--color-text);
+  text-shadow: var(--contact-letter-shadow, none);
+
+  transition: text-shadow var(--duration-normal) var(--ease-standard);
 }
 
 .contact__icon {
+  position: relative;
+
   display: block;
   align-self: center;
   justify-self: end;
@@ -1750,8 +1798,11 @@
   height: 2.5rem;
 
   color: var(--color-text-muted);
+  filter: var(--contact-icon-shadow, none);
 
-  transition: color var(--duration-normal) var(--ease-standard);
+  transition:
+    color var(--duration-normal) var(--ease-standard),
+    filter var(--duration-normal) var(--ease-standard);
 }
 
 .contact__links a:hover .contact__icon,
@@ -2013,6 +2064,8 @@
   .contact__mail-open,
   .contact__pdf-sheet,
   .contact__pdf-fold,
+  .contact__links a::before,
+  .contact__links a > span,
   .site-footer__brand > a,
   .site-footer__nav a {
     transition: none;
