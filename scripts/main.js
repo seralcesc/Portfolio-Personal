@@ -13,57 +13,6 @@ mobileMenuLinks.forEach((link) => {
 });
 
 /* =========================
-   Header — Active section
-   ========================= */
-
-const headerNavigationLinks = document.querySelectorAll(
-  '.site-nav a[href^="#"], .mobile-menu__list a[href^="#"]',
-);
-
-const pageSections = document.querySelectorAll("main > section[id]");
-
-let activeSectionObserver;
-
-function observeActiveSections() {
-  activeSectionObserver?.disconnect();
-
-  const topMargin = Math.round(window.innerHeight * 0.2);
-  const bottomMargin = Math.round(window.innerHeight * 0.35);
-
-  activeSectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        const activeHash = `#${entry.target.id}`;
-
-        headerNavigationLinks.forEach((link) => {
-          if (link.hash === activeHash) {
-            link.setAttribute("aria-current", "location");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
-      });
-    },
-    {
-      rootMargin: `-${topMargin}px 0px -${bottomMargin}px 0px`,
-      threshold: 0,
-    },
-  );
-
-  pageSections.forEach((section) => {
-    activeSectionObserver.observe(section);
-  });
-}
-
-observeActiveSections();
-
-window.addEventListener("resize", observeActiveSections);
-
-/* =========================
    Project galleries
    ========================= */
 
