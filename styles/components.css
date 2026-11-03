@@ -168,7 +168,7 @@
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -1117,7 +1117,7 @@
 .profile__details dt {
   margin-block-end: var(--space-xs);
 
-  color: var(--color-text-muted);
+  color: color-mix(in oklch, var(--color-text-muted) 90%, var(--color-text));
 
   font-size: 0.75rem;
   font-weight: var(--weight-medium);
@@ -1512,7 +1512,7 @@
 }
 
 .learning-entry__language {
-  color: var(--color-accent);
+  color: color-mix(in oklch, var(--color-accent) 90%, var(--color-text));
 }
 
 .learning-entry__description {
@@ -1705,7 +1705,7 @@
 .education-entry__meta {
   margin-block-end: var(--space-sm);
 
-  color: var(--color-text-muted);
+  color: color-mix(in oklch, var(--color-text-muted) 90%, var(--color-text));
 
   font-size: 0.75rem;
   font-weight: var(--weight-medium);
@@ -1829,7 +1829,18 @@
   }
 
   .education-group > h3 {
-    display: none;
+    display: block;
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .education-group__list {
