@@ -1,12 +1,15 @@
 # Portfolio Personal V2 · Sergio Alcántara
 
-![HTML5](https://img.shields.io/badge/HTML5-FF003D?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-A020F0?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=18181E) ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-34343F?style=flat-square&logo=github&logoColor=white)
+![HTML5](https://img.shields.io/badge/Lenguaje-HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/Estilos-CSS-663399?logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/Lenguaje-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub%20Pages-181717?logo=github&logoColor=white)
 
 Portfolio personal de Sergio Alcántara, estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM). Reúne mis proyectos de desarrollo web, mi formación y los repositorios donde documento mi aprendizaje en Java y Python.
 
 Está desarrollado con HTML, CSS y JavaScript, sin frameworks ni proceso de compilación, y publicado en GitHub Pages.
 
-[![Ver el portfolio](https://img.shields.io/badge/Portfolio-Ver_web-FF003D?style=flat-square&labelColor=18181E)](https://seralcesc.github.io/Portfolio-Personal/)
+[![Ver el portfolio](https://img.shields.io/badge/Portfolio-Ver_web-FF003D?labelColor=18181E)](https://seralcesc.github.io/Portfolio-Personal/)
 
 ## Objetivo
 
@@ -41,7 +44,7 @@ El código de los dos proyectos web mostrados es privado. Este repositorio conti
 
 - **HTML:** estructura semántica, navegación por anclas y metadatos para buscadores y redes sociales.
 - **CSS:** diseño con Grid y Flexbox, variables, capas de cascada y adaptación responsive.
-- **JavaScript:** seguimiento de la sección visible con `IntersectionObserver`, galerías, cierre del menú al navegar y pestañas de Formación.
+- **JavaScript:** galerías, cierre del menú al navegar y pestañas de Formación.
 - **Recursos locales:** tipografía Roboto Flex en WOFF2, imágenes de proyectos y retrato en WebP, monogramas e iconos.
 - **Publicación:** GitHub Pages.
 
@@ -62,7 +65,7 @@ El orden de las capas CSS es `reset → tokens → base → layout → component
 
 ## Interacciones y diseño responsive
 
-- Header editorial con monograma junto al nombre en escritorio y un indicador violeta de la sección visible.
+- Header editorial con monograma junto al nombre en escritorio.
 - Enlaces del header con texto blanco y subrayado carmesí al pasar el ratón o recibir foco.
 - Hasta **768 px**, la navegación se presenta mediante un menú modal. El monograma aparece centrado dentro del menú abierto.
 - Galerías con controles anterior/siguiente, contador y transición entre imágenes.
@@ -77,7 +80,6 @@ El efecto de profundidad se limita a dispositivos con capacidad de hover y punte
 - Enlace para saltar al contenido principal.
 - Foco visible y controles accesibles mediante teclado.
 - Menú basado en `<dialog>`, con cierre mediante Escape y al seleccionar un enlace.
-- Indicador de sección activa mediante `aria-current`.
 - Pestañas de Formación con estado seleccionado y navegación mediante flechas izquierda/derecha.
 - Textos alternativos en imágenes informativas e iconos decorativos ocultos a las tecnologías de asistencia.
 - Títulos de los grupos de Formación disponibles para lectores de pantalla aunque se oculten visualmente en móvil.
@@ -114,13 +116,20 @@ Auditoría de la web publicada realizada el **3 de noviembre de 2026**, mediante
 | Buenas prácticas | 100 | 100 |
 | SEO | 100 | 100 |
 
-Informes: [móvil](https://pagespeed.web.dev/analysis/https-seralcesc-github-io-Portfolio-Personal/5vhrmpykel?form_factor=mobile) · [escritorio](https://pagespeed.web.dev/analysis/https-seralcesc-github-io-Portfolio-Personal/5vhrmpykel?form_factor=desktop).
+Informes: [móvil](https://pagespeed.web.dev/analysis/https-seralcesc-github-io-Portfolio-Personal/frdc672qpy?form_factor=mobile) · [escritorio](https://pagespeed.web.dev/analysis/https-seralcesc-github-io-Portfolio-Personal/frdc672qpy?form_factor=desktop).
+
+### Métricas de rendimiento
+
+| Métrica | Móvil | Escritorio |
+| --- | ---: | ---: |
+| First Contentful Paint (FCP) | 0,9 s | 0,2 s |
+| Largest Contentful Paint (LCP) | 1,1 s | 0,3 s |
+| Total Blocking Time (TBT) | 0 ms | 0 ms |
+| Cumulative Layout Shift (CLS) | 0 | 0 |
+
+La prueba móvil utiliza un Moto G Power emulado con limitación de red 4G lenta. Estas métricas corresponden a pruebas de laboratorio; el informe no dispone de datos de usuarios reales.
 
 Las puntuaciones corresponden a esa ejecución de laboratorio y pueden variar. Las comprobaciones automáticas no sustituyen las pruebas manuales de accesibilidad, responsive e interacción.
-
-### Optimización pendiente
-
-Preparar versiones ligeras del monograma para el header y el menú. Actualmente se utiliza el PNG original, de unos 528 KiB, para mostrarlo a 40–80 px.
 
 ## Autor
 
