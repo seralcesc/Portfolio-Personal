@@ -119,34 +119,6 @@
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
-/* Indicador de la sección activa */
-
-.site-nav a::before {
-  content: "";
-
-  position: absolute;
-  inset-inline-start: -0.65rem;
-  top: calc(50% - 2px);
-
-  width: 4px;
-  height: 4px;
-
-  border-radius: 50%;
-  background: var(--color-accent-2);
-
-  opacity: 0;
-
-  transition: opacity var(--duration-fast) var(--ease-standard);
-}
-
-.site-nav a[aria-current="location"] {
-  color: var(--color-text);
-}
-
-.site-nav a[aria-current="location"]::before {
-  opacity: 1;
-}
-
 /* Subrayado y hover carmesí */
 
 .site-nav a::after {
@@ -343,32 +315,6 @@
   transition:
     color var(--duration-fast) var(--ease-standard),
     padding-inline-start var(--duration-normal) var(--ease-standard);
-}
-
-.mobile-menu__list a::before {
-  content: "";
-
-  position: absolute;
-  inset-inline-start: 0.15rem;
-  top: calc(50% - 2px);
-
-  width: 4px;
-  height: 4px;
-
-  border-radius: 50%;
-  background: var(--color-accent-2);
-
-  opacity: 0;
-
-  transition: opacity var(--duration-fast) var(--ease-standard);
-}
-
-.mobile-menu__list a[aria-current="location"] {
-  color: var(--color-text);
-}
-
-.mobile-menu__list a[aria-current="location"]::before {
-  opacity: 1;
 }
 
 .mobile-menu__list a:hover,
