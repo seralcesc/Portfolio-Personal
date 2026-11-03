@@ -459,18 +459,49 @@
     transition: box-shadow var(--duration-normal) var(--ease-standard);
   }
 
-  .section-depth__content {
+  /* Contenido que retrocede */
+  :is(.principles, .contact) > .section-depth > .section-depth__content,
+  .profile__header,
+  .profile__text,
+  .profile__highlight,
+  .stack__header,
+  .learning-log__header,
+  .education__header,
+  .education__tabs {
+    transform: var(--depth-transform, none);
+
     transition: transform var(--duration-normal) var(--ease-standard);
   }
 
+  /* Tarjetas fijas: solo cambia su sombra */
+  .profile__details,
+  .stack-group,
+  .learning-entry {
+    box-shadow: var(--depth-panel-shadow, none);
+
+    transition: box-shadow var(--duration-normal) var(--ease-standard);
+  }
+
+  /* Formación presenta tarjetas en escritorio */
+  @media (min-width: 48.0625rem) {
+    .education-group {
+      box-shadow: var(--depth-panel-shadow, none);
+
+      transition: box-shadow var(--duration-normal) var(--ease-standard);
+    }
+  }
+
+  /* Activación desde cualquier parte de la sección */
   main > section:hover > .section-depth {
+    --depth-transform: translateY(2px) scale(0.99);
+
+    --depth-panel-shadow:
+      0 22px 34px -8px rgb(0 0 0 / 100%), 0 6px 12px -3px rgb(0 0 0 / 80%),
+      inset 0 1px 0 rgb(255 255 255 / 8%);
+
     box-shadow:
       inset 0 12px 24px -9px rgb(0 0 0 / 95%),
       inset 0 -1px 0 rgb(255 255 255 / 4%);
-  }
-
-  main > section:hover > .section-depth > .section-depth__content {
-    transform: translateY(2px) scale(0.99);
   }
 }
 
