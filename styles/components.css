@@ -459,7 +459,6 @@
     transition: box-shadow var(--duration-normal) var(--ease-standard);
   }
 
-  /* Contenido que retrocede */
   .principles > .section-depth > .section-depth__content,
   .contact__header,
   .profile__header,
@@ -474,7 +473,6 @@
     transition: transform var(--duration-normal) var(--ease-standard);
   }
 
-  /* Tarjetas fijas: solo cambia su sombra */
   .profile__details,
   .stack-group,
   .learning-entry {
@@ -483,7 +481,6 @@
     transition: box-shadow var(--duration-normal) var(--ease-standard);
   }
 
-  /* Formación presenta tarjetas en escritorio */
   @media (min-width: 48.0625rem) {
     .education-group {
       box-shadow: var(--depth-panel-shadow, none);
@@ -492,7 +489,6 @@
     }
   }
 
-  /* Hundimiento y sombras de las tarjetas */
   main > section:hover > .section-depth {
     --depth-transform: translateY(2px) scale(0.99);
 
@@ -505,7 +501,6 @@
       inset 0 -1px 0 rgb(255 255 255 / 4%);
   }
 
-  /* Sombras de las letras y los iconos de Contacto */
   .contact:hover > .section-depth {
     --contact-letter-shadow:
       0 12px 3px rgb(0 0 0 / 100%), 0 24px 9px rgb(0 0 0 / 95%),
@@ -1740,26 +1735,8 @@
   font-weight: var(--weight-medium);
 }
 
-/* Las líneas se dibujan en una capa independiente */
-.contact__links a::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  border-block: var(--border-thin);
-
-  transform: var(--depth-transform, none);
-
-  transition:
-    transform var(--duration-normal) var(--ease-standard),
-    border-color var(--duration-normal) var(--ease-standard),
-    filter var(--duration-normal) var(--ease-standard);
-}
-
 .contact__links a + a {
-  margin-block-start: -1px;
+  margin-block-start: 6px;
 }
 
 .contact__links a:hover,
@@ -1768,16 +1745,110 @@
   color: var(--color-text);
 }
 
-.contact__links a:hover::before,
-.contact__links a:focus-visible::before {
-  border-block-color: var(--color-accent);
+/* Capas fijas de las líneas: reposo y surco iluminado */
 
-  filter: drop-shadow(
-    0 0 5px color-mix(in srgb, var(--color-accent) 40%, transparent)
-  );
+.contact__links a::before,
+.contact__links a::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-repeat: no-repeat;
 }
 
-/* Letras suspendidas: conservan su posición y su blanco */
+/* Línea normal, centrada en un espacio fijo de 3 px */
+
+.contact__links a::before {
+  --contact-rest-line: linear-gradient(
+    to bottom,
+    transparent 0 1px,
+    var(--color-border) 1px 2px,
+    transparent 2px 3px
+  );
+
+  background-image: var(--contact-rest-line), var(--contact-rest-line);
+  background-position: top, bottom;
+  background-size: 100% 3px;
+
+  transition: opacity var(--duration-normal) var(--ease-standard);
+}
+
+/* Surcos inmóviles con foco rojo central */
+
+.contact__links a::after {
+  --contact-groove: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 95%) 0 1px,
+    rgb(0 0 0 / 65%) 1px 2px,
+    rgb(255 255 255 / 7%) 2px 3px
+  );
+
+  --contact-core: linear-gradient(
+    to right,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+
+  background-image:
+    var(--contact-core), var(--contact-core), var(--contact-groove),
+    var(--contact-groove),
+    radial-gradient(
+      ellipse at top,
+      color-mix(in srgb, var(--color-accent) 14%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      color-mix(in srgb, var(--color-accent) 14%, transparent),
+      transparent 70%
+    );
+
+  background-position:
+    center 1px,
+    center calc(100% - 1px),
+    top,
+    bottom,
+    center 3px,
+    center calc(100% - 3px);
+
+  background-size:
+    0% 1px,
+    0% 1px,
+    100% 3px,
+    100% 3px,
+    64% 9px,
+    64% 9px;
+
+  opacity: 0;
+
+  transition:
+    opacity var(--duration-normal) var(--ease-standard),
+    background-size var(--duration-slow) var(--ease-standard);
+}
+
+.contact__links a:hover::before,
+.contact__links a:focus-visible::before {
+  opacity: 0;
+}
+
+.contact__links a:hover::after,
+.contact__links a:focus-visible::after {
+  opacity: 1;
+
+  background-size:
+    64% 1px,
+    64% 1px,
+    100% 3px,
+    100% 3px,
+    64% 9px,
+    64% 9px;
+}
+
+/* Letras suspendidas, siempre del mismo color */
+
 .contact__links a > span {
   position: relative;
 
@@ -1786,6 +1857,8 @@
 
   transition: text-shadow var(--duration-normal) var(--ease-standard);
 }
+
+/* Iconos suspendidos */
 
 .contact__icon {
   position: relative;
@@ -1810,6 +1883,8 @@
   color: var(--color-accent-2);
 }
 
+/* Apertura del sobre */
+
 .contact__mail-flap,
 .contact__mail-open {
   transition: opacity var(--duration-normal) var(--ease-standard);
@@ -1828,6 +1903,8 @@
 .contact__links a:focus-visible .contact__mail-open {
   opacity: 1;
 }
+
+/* Despliegue de la hoja */
 
 .contact__pdf-sheet {
   transition: d var(--duration-normal) var(--ease-standard);
@@ -2046,6 +2123,7 @@
 /* =========================
    Reduced Motion
    ========================= */
+
 @media (prefers-reduced-motion: reduce) {
   .skip-link,
   .site-nav a,
