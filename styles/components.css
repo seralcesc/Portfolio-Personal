@@ -32,13 +32,16 @@
   position: sticky;
   top: 0;
   z-index: 100;
+
   border-bottom: var(--border-thin);
+
   background: color-mix(in oklch, var(--color-bg), transparent 8%);
   backdrop-filter: blur(14px);
 }
 
 .site-header__inner {
   min-height: 4.5rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,11 +49,47 @@
 }
 
 .site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
   flex-shrink: 0;
+
+  color: var(--color-text);
+
   font-size: 0.875rem;
   font-weight: var(--weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-brand:hover,
+.site-brand:focus-visible {
+  text-decoration: none;
+}
+
+.site-brand__logo {
+  display: block;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  object-fit: contain;
+}
+
+.site-brand__name {
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    text-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.site-brand:hover .site-brand__name,
+.site-brand:focus-visible .site-brand__name {
+  color: var(--color-accent);
+
+  text-shadow:
+    0 4px 2px rgb(0 0 0 / 95%),
+    0 9px 9px rgb(0 0 0 / 80%);
 }
 
 .site-nav {
@@ -65,31 +104,71 @@
 
 .site-nav a {
   position: relative;
+
   display: inline-flex;
   align-items: center;
+
   min-height: 2.75rem;
+
   color: var(--color-text-secondary);
+
   font-size: 0.875rem;
   font-weight: var(--weight-medium);
   text-decoration: none;
+
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
+/* Indicador de la sección activa */
+
+.site-nav a::before {
+  content: "";
+
+  position: absolute;
+  inset-inline-start: -0.65rem;
+  top: calc(50% - 2px);
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+  background: var(--color-accent-2);
+
+  opacity: 0;
+
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.site-nav a[aria-current="location"] {
+  color: var(--color-text);
+}
+
+.site-nav a[aria-current="location"]::before {
+  opacity: 1;
+}
+
+/* Subrayado y hover carmesí */
+
 .site-nav a::after {
   content: "";
+
   position: absolute;
   inset-inline: 0;
   bottom: 0.35rem;
+
   height: 1px;
+
   background: var(--color-accent);
+
   transform: scaleX(0);
   transform-origin: right;
+
   transition: transform var(--duration-normal) var(--ease-standard);
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
@@ -99,14 +178,64 @@
   transform-origin: left;
 }
 
+/* Botón del menú */
+
 .menu-toggle {
   display: none;
+  align-items: center;
+  gap: var(--space-sm);
+
   min-height: 2.75rem;
+
   cursor: pointer;
+  color: var(--color-text);
+
   font-size: 0.875rem;
   font-weight: var(--weight-medium);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.menu-toggle__icon,
+.mobile-menu__close-icon {
+  position: relative;
+
+  display: block;
+  flex-shrink: 0;
+
+  width: 1.125rem;
+  height: 1rem;
+}
+
+.menu-toggle__icon::before,
+.menu-toggle__icon::after,
+.mobile-menu__close-icon::before,
+.mobile-menu__close-icon::after {
+  content: "";
+
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+
+  height: 1px;
+
+  background: currentColor;
+}
+
+.menu-toggle__icon::before {
+  transform: translateY(-3px);
+}
+
+.menu-toggle__icon::after {
+  transform: translateY(3px);
+}
+
+.mobile-menu__close-icon::before {
+  transform: rotate(45deg);
+}
+
+.mobile-menu__close-icon::after {
+  transform: rotate(-45deg);
 }
 
 /* =========================
@@ -114,13 +243,13 @@
    ========================= */
 
 @media (max-width: 48rem) {
-  .site-nav {
+  .site-nav,
+  .site-brand__logo {
     display: none;
   }
 
   .menu-toggle {
     display: inline-flex;
-    align-items: center;
   }
 }
 
@@ -130,8 +259,9 @@
 
 .mobile-menu {
   width: min(calc(100% - (var(--container-padding) * 2)), 32rem);
-
   max-height: calc(100dvh - (var(--space-xl) * 2));
+
+  overflow: auto;
 
   margin: auto;
   padding: 0;
@@ -150,24 +280,36 @@
 
 .mobile-menu__inner {
   display: grid;
-  gap: var(--space-2xl);
+  gap: var(--space-lg);
 
   padding: clamp(var(--space-xl), 6vw, var(--space-2xl));
 }
 
 .mobile-menu__close {
+  display: inline-flex;
+  align-items: center;
   justify-self: end;
+  gap: var(--space-sm);
 
   min-height: 2.75rem;
 
   cursor: pointer;
-
   color: var(--color-text-secondary);
 
   font-size: 0.875rem;
   font-weight: var(--weight-medium);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.mobile-menu__logo {
+  display: block;
+  justify-self: center;
+
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: contain;
 }
 
 .mobile-menu__list {
@@ -183,17 +325,19 @@
 }
 
 .mobile-menu__list a {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   min-height: 4rem;
+  padding-inline-start: 1rem;
 
   color: var(--color-text-secondary);
 
   font-size: clamp(1.25rem, 5vw, 1.75rem);
   font-weight: var(--weight-medium);
-
   text-decoration: none;
 
   transition:
@@ -201,13 +345,39 @@
     padding-inline-start var(--duration-normal) var(--ease-standard);
 }
 
-.mobile-menu__list a:hover,
-.mobile-menu__list a:focus-visible {
-  padding-inline-start: var(--space-sm);
-  color: var(--color-text);
-  text-decoration: none;
+.mobile-menu__list a::before {
+  content: "";
+
+  position: absolute;
+  inset-inline-start: 0.15rem;
+  top: calc(50% - 2px);
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+  background: var(--color-accent-2);
+
+  opacity: 0;
+
+  transition: opacity var(--duration-fast) var(--ease-standard);
 }
 
+.mobile-menu__list a[aria-current="location"] {
+  color: var(--color-text);
+}
+
+.mobile-menu__list a[aria-current="location"]::before {
+  opacity: 1;
+}
+
+.mobile-menu__list a:hover,
+.mobile-menu__list a:focus-visible {
+  padding-inline-start: calc(1rem + var(--space-sm));
+
+  color: var(--color-accent);
+  text-decoration: none;
+}
 /* =========================
    Hero
    ========================= */
