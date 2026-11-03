@@ -1,10 +1,12 @@
 # Portfolio Personal V2 · Sergio Alcántara
 
+![HTML5](https://img.shields.io/badge/HTML5-FF003D?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-A020F0?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=18181E) ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-34343F?style=flat-square&logo=github&logoColor=white)
+
 Portfolio personal de Sergio Alcántara, estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM). Reúne mis proyectos de desarrollo web, mi formación y los repositorios donde documento mi aprendizaje en Java y Python.
 
 Está desarrollado con HTML, CSS y JavaScript, sin frameworks ni proceso de compilación, y publicado en GitHub Pages.
 
-**[Ver el portfolio](https://seralcesc.github.io/Portfolio-Personal/)**
+[![Ver el portfolio](https://img.shields.io/badge/Portfolio-Ver_web-FF003D?style=flat-square&labelColor=18181E)](https://seralcesc.github.io/Portfolio-Personal/)
 
 ## Objetivo
 
