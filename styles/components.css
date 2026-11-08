@@ -672,6 +672,153 @@
 }
 
 /* =========================
+   Portfolio viewer — Cilindro
+   ========================= */
+
+/* El visor adopta la forma 3D cuando JavaScript añade .is-ready. */
+.portfolio-viewer.is-ready .portfolio-viewer__stage {
+  --stage-width: clamp(84cqi, calc(104cqi - 9.25rem), 90cqi);
+  --radius: calc(var(--stage-width) / 2);
+  width: var(--stage-width);
+
+  position: relative;
+  width: 90%;
+  height: clamp(25rem, 65svh, 35rem);
+  margin: 3.75rem auto 3rem;
+  perspective: 2000px;
+}
+
+/* Gira el conjunto de caras y esquinas. */
+.portfolio-viewer.is-ready .portfolio-viewer__drum {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(-1 * var(--radius))) rotateY(var(--angle));
+  transition: transform var(--turn-time, 1.28s)
+    cubic-bezier(0.36, 0.08, 0.32, 1);
+}
+
+/* Cada cara se coloca a un cuarto de vuelta de la anterior. */
+.portfolio-viewer__drum > .portfolio-face:nth-child(1) {
+  --face: 0deg;
+}
+
+.portfolio-viewer__drum > .portfolio-face:nth-child(2) {
+  --face: 90deg;
+}
+
+.portfolio-viewer__drum > .portfolio-face:nth-child(3) {
+  --face: 180deg;
+}
+
+.portfolio-viewer__drum > .portfolio-face:nth-child(4) {
+  --face: 270deg;
+}
+
+.portfolio-viewer.is-ready .portfolio-face {
+  position: absolute;
+  inset: 0 var(--bevel);
+  transform: rotateY(var(--face)) translateZ(var(--radius));
+  backface-visibility: hidden;
+
+  border: 1px solid #805565;
+  border-radius: var(--bevel);
+  background: linear-gradient(115deg, #201621, #17121b);
+  box-shadow:
+    inset 0 1px #d18b9a30,
+    inset 0 -2px #0b070e8f;
+}
+
+/* El desplazamiento vertical ocurre dentro de cada cara. */
+.portfolio-viewer.is-ready .portfolio-face__body {
+  height: 100%;
+  padding: clamp(0.75rem, 2.4cqi, 1.75rem);
+  overflow: auto;
+  scrollbar-gutter: stable;
+  border-radius: inherit;
+}
+
+.portfolio-viewer.is-ready .portfolio-face__body:focus-visible {
+  outline-offset: -5px;
+}
+
+.portfolio-viewer.is-ready .portfolio-face__body > section {
+  width: 100%;
+  padding-block: var(--space-md);
+}
+
+.portfolio-viewer.is-ready .portfolio-face__body > section + section {
+  margin-block-start: var(--space-lg);
+  border-top: var(--border-thin);
+}
+
+/* Cuatro tiras por esquina suavizan la unión entre las caras. */
+.portfolio-viewer__corner {
+  display: none;
+}
+
+.portfolio-viewer.is-ready .portfolio-viewer__corner {
+  display: block;
+  position: absolute;
+  inset: 0;
+  transform: rotateY(var(--corner));
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.portfolio-viewer__corner > i {
+  position: absolute;
+  inset-block: 7px;
+  left: 50%;
+  width: calc(var(--bevel) * 0.435);
+
+  border-radius: 3px;
+  backface-visibility: hidden;
+  background: linear-gradient(180deg, #9e667a, var(--shell) 9% 89%, #241625);
+  transform: translate3d(
+      calc(var(--radius) - var(--bevel) - 50%),
+      0,
+      calc(var(--radius) - var(--bevel))
+    )
+    rotateY(var(--arc)) translateZ(var(--bevel));
+}
+
+.portfolio-viewer__corner > i:nth-child(1) {
+  --arc: 11.25deg;
+  --shell: #37212f;
+}
+
+.portfolio-viewer__corner > i:nth-child(2) {
+  --arc: 33.75deg;
+  --shell: #503043;
+}
+
+.portfolio-viewer__corner > i:nth-child(3) {
+  --arc: 56.25deg;
+  --shell: #492d42;
+}
+
+.portfolio-viewer__corner > i:nth-child(4) {
+  --arc: 78.75deg;
+  --shell: #352333;
+}
+
+/* =========================
+   Portfolio viewer — Cilindro en móvil
+   ========================= */
+
+@media (max-width: 48rem) {
+  .portfolio-viewer.is-ready .portfolio-viewer__stage {
+    --radius: 44cqi;
+
+    width: 88%;
+    height: clamp(23rem, 65svh, 29rem);
+    margin-block: 2.25rem;
+    perspective: 1050px;
+  }
+}
+
+/* =========================
    Selected Work
    ========================= */
 
@@ -2283,5 +2430,17 @@
   /* Hero. */
   .hero__actions a {
     transition: none;
+  }
+  /* Portfolio-viewer */
+  .portfolio-viewer.is-ready .portfolio-viewer__drum {
+    transform: none;
+    transition: none;
+  }
+  .portfolio-viewer.is-ready .portfolio-face {
+    transform: none;
+  }
+  .portfolio-viewer.is-ready .portfolio-face:not(.is-front),
+  .portfolio-viewer.is-ready .portfolio-viewer__corner {
+    display: none;
   }
 }
