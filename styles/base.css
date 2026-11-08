@@ -107,4 +107,16 @@ hr {
 
 main {
   overflow: clip;
+
+  /* La luz carmesí entra por la derecha al llegar a los proyectos. */
+  background:
+    radial-gradient(ellipse 75% 48% at 93% 50%, #281922, transparent)
+      right 0 top 36rem / 100% 52rem no-repeat,
+    linear-gradient(
+      to bottom,
+      var(--color-bg) 30rem,
+      #19141c 65rem,
+      #100e13 60%,
+      #17111a
+    );
 }
