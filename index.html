@@ -121,10 +121,7 @@
 
         <nav class="site-nav" aria-label="Navegación principal">
           <ul class="site-nav__list">
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#perfil">Perfil</a></li>
-            <li><a href="#stack">Stack</a></li>
-            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#trabajo">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
@@ -140,6 +137,15 @@
           <span>Menú</span>
           <span class="menu-toggle__icon" aria-hidden="true"></span>
         </button>
+        <a
+          class="site-header__github"
+          href="https://github.com/seralcesc"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub (se abre en una nueva pestaña)"
+        >
+          <img src="assets/icons/github.svg" alt="" width="22" height="22" />
+        </a>
       </div>
 
       <dialog
@@ -168,12 +174,7 @@
 
           <nav aria-label="Navegación móvil">
             <ul class="mobile-menu__list">
-              <li><a href="#proyectos">Proyectos</a></li>
-              <li><a href="#perfil">Perfil</a></li>
-              <li><a href="#principios">Principios</a></li>
-              <li><a href="#stack">Stack</a></li>
-              <li><a href="#aprendizaje">Learning Log</a></li>
-              <li><a href="#formacion">Formación</a></li>
+              <li><a href="#trabajo">Proyectos</a></li>
               <li><a href="#contacto">Contacto</a></li>
             </ul>
           </nav>
@@ -184,11 +185,13 @@
     <main id="contenido">
       <section class="hero" id="inicio">
         <div class="hero__content">
-          <p class="hero__eyebrow">DAM · En formación</p>
+          <p class="hero__eyebrow">
+            <span aria-hidden="true">/</span> Sergio Alcántara
+          </p>
 
           <h1 class="hero__title">
-            <span class="hero__initial">A</span>prender.
-            <span class="hero__initial">C</span>onstruir.
+            <span class="hero__initial">D</span>escubrir.<br />
+            <span class="hero__initial">A</span>plicar.<br />
             <span class="hero__initial">M</span>ejorar.
           </h1>
 
@@ -201,17 +204,7 @@
           </p>
 
           <div class="hero__actions">
-            <a href="#proyectos"> Ver proyectos </a>
-
-            <a
-              href="https://github.com/seralcesc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ver repositorios de Github en una nueva pestaña"
-            >
-              GitHub
-              <span class="hero__external-icon" aria-hidden="true">↗</span>
-            </a>
+            <a href="#trabajo"> Ver proyectos </a>
           </div>
         </div>
 
@@ -226,602 +219,784 @@
         </figure>
       </section>
 
-      <section class="projects" id="proyectos" aria-labelledby="projects-title">
-        <div class="projects__header">
-          <p class="projects__eyebrow section-eyebrow">
-            <span class="section-number">01</span> / Selected Work
-          </p>
-
-          <h2 class="projects__title" id="projects-title">
-            <span class="section-title-text">Proyectos seleccionados</span>
-          </h2>
-
-          <p class="projects__intro">
-            Una selección de trabajos centrados en desarrollo web,
-            accesibilidad, rendimiento y diseño de interfaces.
-          </p>
-        </div>
-
-        <div class="projects__list">
-          <article class="project">
-            <div class="project__media">
-              <img
-                src="assets/images/projects/jcrisol/cover.webp"
-                alt="Página principal de J. Crisol con la presentación de El Guardián Tartésico"
-                width="1600"
-                height="1000"
-                loading="lazy"
-              />
-
-              <img
-                src="assets/images/projects/jcrisol/desktop.webp"
-                alt="Sección de personajes del sitio web de J. Crisol"
-                width="1600"
-                height="1000"
-                loading="lazy"
-                hidden
-              />
-
-              <img
-                src="assets/images/projects/jcrisol/mobile.webp"
-                alt="Vista móvil del catálogo de libros de J. Crisol"
-                width="1600"
-                height="1000"
-                loading="lazy"
-                hidden
-              />
-            </div>
-
-            <div class="project__gallery-controls" hidden>
-              <button
-                class="project__gallery-button project__gallery-button--prev"
-                type="button"
-                aria-label="Imagen anterior"
-              >
-                ←
-              </button>
-
-              <p class="project__gallery-counter" aria-live="polite">
-                <span>01</span> / <span>03</span>
-              </p>
-
-              <button
-                class="project__gallery-button project__gallery-button--next"
-                type="button"
-                aria-label="Imagen siguiente"
-              >
-                →
-              </button>
-            </div>
-
-            <div class="project__content">
-              <p class="project__meta">Landing page · 2026</p>
-
-              <h3 class="project__title">J. Crisol</h3>
-
-              <p class="project__description">
-                Landing page desarrollada para presentar los servicios del
-                cliente mediante una interfaz clara, accesible y optimizada para
-                distintos dispositivos.
-              </p>
-
-              <ul class="project__stack" aria-label="Tecnologías utilizadas">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
-
-              <div class="project__links">
-                <a
-                  href="https://jcrisol.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visitar sitio de J. Crisol en una nueva pestaña"
-                >
-                  Ver sitio web
-                </a>
-
-                <span> Código privado </span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project__media">
-              <img
-                src="assets/images/projects/devesa-english/cover.webp"
-                alt="Portada ilustrada de Devesa English School"
-                width="1600"
-                height="1000"
-                loading="lazy"
-              />
-
-              <img
-                src="assets/images/projects/devesa-english/desktop.webp"
-                alt="Sección sobre las clases online de Devesa English School"
-                width="1600"
-                height="1000"
-                loading="lazy"
-                hidden
-              />
-
-              <img
-                src="assets/images/projects/devesa-english/mobile.webp"
-                alt="Vista móvil de la sección de contacto de Devesa English School"
-                width="1600"
-                height="1000"
-                loading="lazy"
-                hidden
-              />
-            </div>
-
-            <div class="project__gallery-controls" hidden>
-              <button
-                class="project__gallery-button project__gallery-button--prev"
-                type="button"
-                aria-label="Imagen anterior"
-              >
-                ←
-              </button>
-
-              <p class="project__gallery-counter" aria-live="polite">
-                <span>01</span> / <span>03</span>
-              </p>
-
-              <button
-                class="project__gallery-button project__gallery-button--next"
-                type="button"
-                aria-label="Imagen siguiente"
-              >
-                →
-              </button>
-            </div>
-
-            <div class="project__content">
-              <p class="project__meta">Landing page · 2026</p>
-
-              <h3 class="project__title">Devesa English School</h3>
-
-              <p class="project__description">
-                Landing page para una academia de inglés online, desarrollada
-                con especial atención a la claridad del contenido, la
-                experiencia de usuario y la adaptación responsive.
-              </p>
-
-              <ul class="project__stack" aria-label="Tecnologías utilizadas">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
-
-              <div class="project__links">
-                <a
-                  href="https://devesa-english-school.seralcesc.workers.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visitar sitio de Devesa English School en una nueva pestaña"
-                >
-                  Ver sitio web
-                </a>
-
-                <span> Código privado </span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="profile" id="perfil" aria-labelledby="profile-title">
-        <div class="section-depth">
-          <div class="section-depth__content">
-            <div class="profile__header">
-              <p class="profile__eyebrow section-eyebrow">
-                <span class="section-number">02</span> / Profile
-              </p>
-
-              <h2 class="profile__title" id="profile-title">Sobre mí</h2>
-            </div>
-
-            <div class="profile__content">
-              <div class="profile__text">
-                <p>
-                  Actualmente curso Desarrollo de Aplicaciones Multiplataforma
-                  (DAM), donde estoy adquiriendo conocimientos de programación,
-                  bases de datos y arquitectura de aplicaciones.
-                </p>
-
-                <p>
-                  Java y Python son los lenguajes con los que estoy trabajando.
-                  Al mismo tiempo, el desarrollo web me ha permitido explorar
-                  otra faceta de la tecnología: el diseño de interfaces, la
-                  accesibilidad y la experiencia de usuario.
-                </p>
-
-                <p>
-                  Me gusta abordar cada proyecto con curiosidad y criterio,
-                  buscar soluciones sencillas y prestar atención a los detalles
-                  que hacen que un producto sea útil y mantenible.
-                </p>
-              </div>
-              <p class="profile__highlight">
-                Para mí, desarrollar software significa encontrar el equilibrio
-                entre lo que una aplicación hace y cómo se utiliza.
-              </p>
-
-              <dl class="profile__details">
-                <div>
-                  <dt>Formación</dt>
-                  <dd>Desarrollo de Aplicaciones Multiplataforma</dd>
-                </div>
-
-                <div>
-                  <dt>Actualmente</dt>
-                  <dd>Java · Python</dd>
-                </div>
-
-                <div>
-                  <dt>Descubriendo</dt>
-                  <dd>Web · Diseño · Accesibilidad · Performance</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
-        class="principles"
-        id="principios"
-        aria-labelledby="principles-title"
+        class="portfolio-viewer"
+        id="trabajo"
+        aria-labelledby="viewer-title"
       >
-        <div class="section-depth">
-          <div class="section-depth__content">
-            <div class="principles__header">
-              <p class="principles__eyebrow section-eyebrow">
-                <span class="section-number">03</span> / Principles
-              </p>
-
-              <h2 class="principles__title" id="principles-title">
-                Cómo trabajo
-              </h2>
-            </div>
-
-            <ol class="principles__list">
-              <li class="principle">
-                <span class="principle__number" aria-hidden="true"> I </span>
-
-                <div class="principle__content">
-                  <h3>Fundamentos antes que herramientas</h3>
-
-                  <p>
-                    Comprender el problema y sus fundamentos antes de elegir las
-                    herramientas para resolverlo.
-                  </p>
-                </div>
-              </li>
-
-              <li class="principle">
-                <span class="principle__number" aria-hidden="true"> II </span>
-
-                <div class="principle__content">
-                  <h3>Código claro y mantenible</h3>
-
-                  <p>
-                    Priorizar la legibilidad, la organización y una estructura
-                    que facilite futuros cambios.
-                  </p>
-                </div>
-              </li>
-
-              <li class="principle">
-                <span class="principle__number" aria-hidden="true"> III </span>
-
-                <div class="principle__content">
-                  <h3>Interfaces cuidadas</h3>
-
-                  <p>
-                    Presentar la información con claridad y facilitar una
-                    interacción intuitiva.
-                  </p>
-                </div>
-              </li>
-
-              <li class="principle">
-                <span class="principle__number" aria-hidden="true"> IV </span>
-
-                <div class="principle__content">
-                  <h3>Accesibilidad desde el inicio</h3>
-
-                  <p>
-                    Integrar la accesibilidad en el diseño y el desarrollo, no
-                    como una corrección posterior.
-                  </p>
-                </div>
-              </li>
-
-              <li class="principle">
-                <span class="principle__number" aria-hidden="true"> V </span>
-
-                <div class="principle__content">
-                  <h3>Rendimiento con intención</h3>
-
-                  <p>
-                    Utilizar los recursos necesarios y evitar costes que no
-                    aporten valor.
-                  </p>
-                </div>
-              </li>
-            </ol>
+        <div class="portfolio-viewer__header">
+          <h2 id="viewer-title">Mi trabajo.</h2>
+          <div class="portfolio-viewer__controls" hidden>
+            <button type="button" data-turn="-1" aria-label="Sección anterior">
+              ←
+            </button>
+            <span data-viewer-count aria-hidden="true">01 / 04</span>
+            <button type="button" data-turn="1" aria-label="Sección siguiente">
+              →
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="stack" id="stack" aria-labelledby="stack-title">
-        <div class="section-depth">
-          <div class="section-depth__content">
-            <div class="stack__header">
-              <p class="stack__eyebrow section-eyebrow">
-                <span class="section-number">04</span> / Stack
-              </p>
-
-              <h2 class="stack__title" id="stack-title">
-                Tecnologías y herramientas
-              </h2>
-            </div>
-
-            <div class="stack__groups">
-              <div class="stack-group">
-                <h3 id="stack-programming">Programación</h3>
-
-                <ul>
-                  <li>Java</li>
-                  <li>Python</li>
-                </ul>
-              </div>
-
-              <div class="stack-group">
-                <h3 id="stack-data">Datos</h3>
-
-                <ul>
-                  <li>SQL</li>
-                </ul>
-              </div>
-
-              <div class="stack-group">
-                <h3 id="stack-web">Web</h3>
-
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
-              </div>
-
-              <div class="stack-group">
-                <h3 id="stack-tools">Herramientas</h3>
-
-                <ul>
-                  <li>Git</li>
-                  <li>GitHub</li>
-                  <li>Visual Studio Code</li>
-                  <li>Apache NetBeans</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div
+          class="portfolio-viewer__nav"
+          role="group"
+          aria-label="Secciones del portfolio"
+          hidden
+        >
+          <button type="button" data-face="0" aria-pressed="true">
+            Proyectos
+          </button>
+          <button type="button" data-face="1" aria-pressed="false">
+            Sobre mí
+          </button>
+          <button type="button" data-face="2" aria-pressed="false">
+            Aprendizaje
+          </button>
+          <button type="button" data-face="3" aria-pressed="false">
+            Formación
+          </button>
         </div>
-      </section>
-
-      <section
-        class="learning-log"
-        id="aprendizaje"
-        aria-labelledby="learning-log-title"
-      >
-        <div class="section-depth">
-          <div class="section-depth__content">
-            <div class="learning-log__header">
-              <p class="learning-log__eyebrow section-eyebrow">
-                <span class="section-number">05</span> / Learning Log
-              </p>
-
-              <h2 class="learning-log__title" id="learning-log-title">
-                Aprendizaje en progreso
-              </h2>
-
-              <p class="learning-log__intro">
-                Repositorios donde documento ejercicios, prácticas y conceptos
-                trabajados durante mi formación.
-              </p>
-            </div>
-
-            <div class="learning-log__list">
-              <article class="learning-entry">
-                <div class="learning-entry__header">
-                  <p class="learning-entry__meta">
-                    <span class="learning-entry__language">Java</span> ·
-                    Repositorio de aprendizaje
-                  </p>
-
-                  <h3>DAM Java Learning Log</h3>
-                </div>
-
-                <p class="learning-entry__description">
-                  Ejercicios, prácticas y pequeños proyectos que reflejan mi
-                  evolución con Java a medida que avanzo en los contenidos del
-                  ciclo.
-                </p>
-
-                <dl class="learning-entry__details">
-                  <div>
-                    <dt>Estado</dt>
-                    <dd class="learning-entry__status">Activo</dd>
-                  </div>
-
-                  <div>
-                    <dt>Contexto</dt>
-                    <dd>DAM · Programación</dd>
-                  </div>
-                </dl>
-
-                <a
-                  href="https://github.com/seralcesc/dam-java-learning"
-                  target="_blank"
-                  rel="noopener noreferrer"
+        <div class="portfolio-viewer__stage">
+          <div class="portfolio-viewer__drum">
+            <div class="portfolio-face is-front">
+              <div
+                class="portfolio-face__body"
+                role="region"
+                aria-label="Proyectos"
+                tabindex="0"
+              >
+                <section
+                  class="projects"
+                  id="proyectos"
+                  aria-labelledby="projects-title"
                 >
-                  Ver repositorio <span aria-hidden="true">↗</span>
-                </a>
-              </article>
+                  <div class="projects__header">
+                    <p class="projects__eyebrow section-eyebrow">
+                      <span class="section-number">01</span> / Selected Work
+                    </p>
 
-              <article class="learning-entry">
-                <div class="learning-entry__header">
-                  <p class="learning-entry__meta">
-                    <span class="learning-entry__language">Python</span> ·
-                    Repositorio de aprendizaje
-                  </p>
+                    <h2 class="projects__title" id="projects-title">
+                      <span class="section-title-text"
+                        >Proyectos seleccionados</span
+                      >
+                    </h2>
 
-                  <h3>DAM Python Learning Log</h3>
-                </div>
-
-                <p class="learning-entry__description">
-                  Ejercicios, prácticas y pequeños proyectos desarrollados con
-                  Python como parte de mi aprendizaje y evolución durante la
-                  formación.
-                </p>
-
-                <dl class="learning-entry__details">
-                  <div>
-                    <dt>Estado</dt>
-                    <dd class="learning-entry__status">Activo</dd>
+                    <p class="projects__intro">
+                      Una selección de trabajos centrados en desarrollo web,
+                      accesibilidad, rendimiento y diseño de interfaces.
+                    </p>
                   </div>
 
-                  <div>
-                    <dt>Contexto</dt>
-                    <dd>DAM · Programación</dd>
-                  </div>
-                </dl>
+                  <div class="projects__list">
+                    <article class="project">
+                      <div class="project__media">
+                        <img
+                          src="assets/images/projects/jcrisol/cover.webp"
+                          alt="Página principal de J. Crisol con la presentación de El Guardián Tartésico"
+                          width="1600"
+                          height="1000"
+                          loading="lazy"
+                        />
 
-                <a
-                  href="https://github.com/seralcesc/dam-python-learning"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver repositorio <span aria-hidden="true">↗</span>
-                </a>
-              </article>
+                        <img
+                          src="assets/images/projects/jcrisol/desktop.webp"
+                          alt="Sección de personajes del sitio web de J. Crisol"
+                          width="1600"
+                          height="1000"
+                          loading="lazy"
+                          hidden
+                        />
+
+                        <img
+                          src="assets/images/projects/jcrisol/mobile.webp"
+                          alt="Vista móvil del catálogo de libros de J. Crisol"
+                          width="1600"
+                          height="1000"
+                          loading="lazy"
+                          hidden
+                        />
+                      </div>
+
+                      <div class="project__gallery-controls" hidden>
+                        <button
+                          class="project__gallery-button project__gallery-button--prev"
+                          type="button"
+                          aria-label="Imagen anterior"
+                        >
+                          ←
+                        </button>
+
+                        <p class="project__gallery-counter" aria-live="polite">
+                          <span>01</span> / <span>03</span>
+                        </p>
+
+                        <button
+                          class="project__gallery-button project__gallery-button--next"
+                          type="button"
+                          aria-label="Imagen siguiente"
+                        >
+                          →
+                        </button>
+                      </div>
+
+                      <div class="project__content">
+                        <p class="project__meta">Landing page · 2026</p>
+
+                        <h3 class="project__title">J. Crisol</h3>
+
+                        <p class="project__description">
+                          Landing page desarrollada para presentar los servicios
+                          del cliente mediante una interfaz clara, accesible y
+                          optimizada para distintos dispositivos.
+                        </p>
+
+                        <ul
+                          class="project__stack"
+                          aria-label="Tecnologías utilizadas"
+                        >
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>JavaScript</li>
+                        </ul>
+
+                        <div class="project__links">
+                          <a
+                            href="https://jcrisol.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visitar sitio de J. Crisol en una nueva pestaña"
+                          >
+                            Ver sitio web
+                          </a>
+
+                          <span> Código privado </span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="project">
+                      <div class="project__media">
+                        <img
+                          src="assets/images/projects/devesa-english/cover.webp"
+                          alt="Portada ilustrada de Devesa English School"
+                          width="1600"
+                          height="1000"
+                          loading="lazy"
+                        />
+
+                        <img
+                          src="assets/images/projects/devesa-english/desktop.webp"
+                          alt="Sección sobre las clases online de Devesa English School"
+                          width="1600"
+                          height="1000"
+                          loading="lazy"
+                          hidden
+                        />
+
+                        <img
+                          src="assets/images/projects/devesa-english/mobile.webp"
+                          alt="Vista móvil de la sección de contacto de Devesa English School"
+                          width="1600"
+                          height="1000"
+                          loading="lazy"
+                          hidden
+                        />
+                      </div>
+
+                      <div class="project__gallery-controls" hidden>
+                        <button
+                          class="project__gallery-button project__gallery-button--prev"
+                          type="button"
+                          aria-label="Imagen anterior"
+                        >
+                          ←
+                        </button>
+
+                        <p class="project__gallery-counter" aria-live="polite">
+                          <span>01</span> / <span>03</span>
+                        </p>
+
+                        <button
+                          class="project__gallery-button project__gallery-button--next"
+                          type="button"
+                          aria-label="Imagen siguiente"
+                        >
+                          →
+                        </button>
+                      </div>
+
+                      <div class="project__content">
+                        <p class="project__meta">Landing page · 2026</p>
+
+                        <h3 class="project__title">Devesa English School</h3>
+
+                        <p class="project__description">
+                          Landing page para una academia de inglés online,
+                          desarrollada con especial atención a la claridad del
+                          contenido, la experiencia de usuario y la adaptación
+                          responsive.
+                        </p>
+
+                        <ul
+                          class="project__stack"
+                          aria-label="Tecnologías utilizadas"
+                        >
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>JavaScript</li>
+                        </ul>
+
+                        <div class="project__links">
+                          <a
+                            href="https://devesa-english-school.seralcesc.workers.dev"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visitar sitio de Devesa English School en una nueva pestaña"
+                          >
+                            Ver sitio web
+                          </a>
+
+                          <span> Código privado </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <div class="portfolio-face">
+              <div
+                class="portfolio-face__body"
+                role="region"
+                aria-label="Sobre mí"
+                tabindex="0"
+              >
+                <section
+                  class="profile"
+                  id="perfil"
+                  aria-labelledby="profile-title"
+                >
+                  <div class="section-depth">
+                    <div class="section-depth__content">
+                      <div class="profile__header">
+                        <p class="profile__eyebrow section-eyebrow">
+                          <span class="section-number">02</span> / Profile
+                        </p>
 
-      <section
-        class="education"
-        id="formacion"
-        aria-labelledby="education-title"
-      >
-        <div class="section-depth">
-          <div class="section-depth__content">
-            <div class="education__header">
-              <p class="education__eyebrow section-eyebrow">
-                <span class="section-number">06</span> / Education
-              </p>
+                        <h2 class="profile__title" id="profile-title">
+                          Sobre mí
+                        </h2>
+                      </div>
 
-              <h2 class="education__title" id="education-title">Formación</h2>
+                      <div class="profile__content">
+                        <div class="profile__text">
+                          <p>
+                            Actualmente curso Desarrollo de Aplicaciones
+                            Multiplataforma (DAM), donde estoy adquiriendo
+                            conocimientos de programación, bases de datos y
+                            arquitectura de aplicaciones.
+                          </p>
+
+                          <p>
+                            Java y Python son los lenguajes con los que estoy
+                            trabajando. Al mismo tiempo, el desarrollo web me ha
+                            permitido explorar otra faceta de la tecnología: el
+                            diseño de interfaces, la accesibilidad y la
+                            experiencia de usuario.
+                          </p>
+
+                          <p>
+                            Me gusta abordar cada proyecto con curiosidad y
+                            criterio, buscar soluciones sencillas y prestar
+                            atención a los detalles que hacen que un producto
+                            sea útil y mantenible.
+                          </p>
+                        </div>
+                        <p class="profile__highlight">
+                          Para mí, desarrollar software significa encontrar el
+                          equilibrio entre lo que una aplicación hace y cómo se
+                          utiliza.
+                        </p>
+
+                        <dl class="profile__details">
+                          <div>
+                            <dt>Formación</dt>
+                            <dd>Desarrollo de Aplicaciones Multiplataforma</dd>
+                          </div>
+
+                          <div>
+                            <dt>Actualmente</dt>
+                            <dd>Java · Python</dd>
+                          </div>
+
+                          <div>
+                            <dt>Descubriendo</dt>
+                            <dd>Web · Diseño · Accesibilidad · Performance</dd>
+                          </div>
+                        </dl>
+                      </div>
+                      <a
+                        class="profile__cv"
+                        href="assets/documents/sergio-alcantara-cv.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Ver currículum (se abre en una nueva pestaña)"
+                      >
+                        <span>Ver currículum</span>
+
+                        <svg
+                          class="contact__icon contact__icon--pdf"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            class="contact__pdf-sheet"
+                            d="M7 2 H19 L26 9 V30 H7 Z"
+                          />
+
+                          <path class="contact__pdf-fold" d="M19 2 V9 H26" />
+
+                          <path d="M11 16 H22" />
+                          <path d="M11 20 H22" />
+                          <path d="M11 24 H18" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </section>
+
+                <section
+                  class="principles"
+                  id="principios"
+                  aria-labelledby="principles-title"
+                >
+                  <div class="section-depth">
+                    <div class="section-depth__content">
+                      <div class="principles__header">
+                        <p class="principles__eyebrow section-eyebrow">
+                          <span class="section-number">03</span> / Principles
+                        </p>
+
+                        <h2 class="principles__title" id="principles-title">
+                          Cómo trabajo
+                        </h2>
+                      </div>
+
+                      <ol class="principles__list">
+                        <li class="principle">
+                          <span class="principle__number" aria-hidden="true">
+                            I
+                          </span>
+
+                          <div class="principle__content">
+                            <h3>Fundamentos antes que herramientas</h3>
+
+                            <p>
+                              Comprender el problema y sus fundamentos antes de
+                              elegir las herramientas para resolverlo.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="principle">
+                          <span class="principle__number" aria-hidden="true">
+                            II
+                          </span>
+
+                          <div class="principle__content">
+                            <h3>Código claro y mantenible</h3>
+
+                            <p>
+                              Priorizar la legibilidad, la organización y una
+                              estructura que facilite futuros cambios.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="principle">
+                          <span class="principle__number" aria-hidden="true">
+                            III
+                          </span>
+
+                          <div class="principle__content">
+                            <h3>Interfaces cuidadas</h3>
+
+                            <p>
+                              Presentar la información con claridad y facilitar
+                              una interacción intuitiva.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="principle">
+                          <span class="principle__number" aria-hidden="true">
+                            IV
+                          </span>
+
+                          <div class="principle__content">
+                            <h3>Accesibilidad desde el inicio</h3>
+
+                            <p>
+                              Integrar la accesibilidad en el diseño y el
+                              desarrollo, no como una corrección posterior.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="principle">
+                          <span class="principle__number" aria-hidden="true">
+                            V
+                          </span>
+
+                          <div class="principle__content">
+                            <h3>Rendimiento con intención</h3>
+
+                            <p>
+                              Utilizar los recursos necesarios y evitar costes
+                              que no aporten valor.
+                            </p>
+                          </div>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="stack" id="stack" aria-labelledby="stack-title">
+                  <div class="section-depth">
+                    <div class="section-depth__content">
+                      <div class="stack__header">
+                        <p class="stack__eyebrow section-eyebrow">
+                          <span class="section-number">04</span> / Stack
+                        </p>
+
+                        <h2 class="stack__title" id="stack-title">
+                          Tecnologías y herramientas
+                        </h2>
+                      </div>
+
+                      <div class="stack__groups">
+                        <div class="stack-group">
+                          <h3 id="stack-programming">Programación</h3>
+
+                          <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                          </ul>
+                        </div>
+
+                        <div class="stack-group">
+                          <h3 id="stack-data">Datos</h3>
+
+                          <ul>
+                            <li>SQL</li>
+                          </ul>
+                        </div>
+
+                        <div class="stack-group">
+                          <h3 id="stack-web">Web</h3>
+
+                          <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                          </ul>
+                        </div>
+
+                        <div class="stack-group">
+                          <h3 id="stack-tools">Herramientas</h3>
+
+                          <ul>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>Visual Studio Code</li>
+                            <li>Apache NetBeans</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="portfolio-face">
+              <div
+                class="portfolio-face__body"
+                role="region"
+                aria-label="Aprendizaje"
+                tabindex="0"
+              >
+                <section
+                  class="learning-log"
+                  id="aprendizaje"
+                  aria-labelledby="learning-log-title"
+                >
+                  <div class="section-depth">
+                    <div class="section-depth__content">
+                      <div class="learning-log__header">
+                        <p class="learning-log__eyebrow section-eyebrow">
+                          <span class="section-number">05</span> / Learning Log
+                        </p>
+
+                        <h2 class="learning-log__title" id="learning-log-title">
+                          Aprendizaje en progreso
+                        </h2>
+
+                        <p class="learning-log__intro">
+                          Repositorios donde documento ejercicios, prácticas y
+                          conceptos trabajados durante mi formación.
+                        </p>
+                      </div>
+
+                      <div class="learning-log__list">
+                        <article class="learning-entry">
+                          <div class="learning-entry__header">
+                            <p class="learning-entry__meta">
+                              <span class="learning-entry__language">Java</span>
+                              · Repositorio de aprendizaje
+                            </p>
+
+                            <h3>DAM Java Learning Log</h3>
+                          </div>
+
+                          <p class="learning-entry__description">
+                            Ejercicios, prácticas y pequeños proyectos que
+                            reflejan mi evolución con Java a medida que avanzo
+                            en los contenidos del ciclo.
+                          </p>
+
+                          <dl class="learning-entry__details">
+                            <div>
+                              <dt>Estado</dt>
+                              <dd class="learning-entry__status">Activo</dd>
+                            </div>
+
+                            <div>
+                              <dt>Contexto</dt>
+                              <dd>DAM · Programación</dd>
+                            </div>
+                          </dl>
+
+                          <a
+                            href="https://github.com/seralcesc/dam-java-learning"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Ver repositorio <span aria-hidden="true">↗</span>
+                          </a>
+                        </article>
+
+                        <article class="learning-entry">
+                          <div class="learning-entry__header">
+                            <p class="learning-entry__meta">
+                              <span class="learning-entry__language"
+                                >Python</span
+                              >
+                              · Repositorio de aprendizaje
+                            </p>
+
+                            <h3>DAM Python Learning Log</h3>
+                          </div>
+
+                          <p class="learning-entry__description">
+                            Ejercicios, prácticas y pequeños proyectos
+                            desarrollados con Python como parte de mi
+                            aprendizaje y evolución durante la formación.
+                          </p>
+
+                          <dl class="learning-entry__details">
+                            <div>
+                              <dt>Estado</dt>
+                              <dd class="learning-entry__status">Activo</dd>
+                            </div>
+
+                            <div>
+                              <dt>Contexto</dt>
+                              <dd>DAM · Programación</dd>
+                            </div>
+                          </dl>
+
+                          <a
+                            href="https://github.com/seralcesc/dam-python-learning"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Ver repositorio <span aria-hidden="true">↗</span>
+                          </a>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="portfolio-face">
+              <div
+                class="portfolio-face__body"
+                role="region"
+                aria-label="Formación"
+                tabindex="0"
+              >
+                <section
+                  class="education"
+                  id="formacion"
+                  aria-labelledby="education-title"
+                >
+                  <div class="section-depth">
+                    <div class="section-depth__content">
+                      <div class="education__header">
+                        <p class="education__eyebrow section-eyebrow">
+                          <span class="section-number">06</span> / Education
+                        </p>
+
+                        <h2 class="education__title" id="education-title">
+                          Formación
+                        </h2>
+                      </div>
+
+                      <div
+                        class="education__tabs"
+                        role="tablist"
+                        aria-label="Tipo de formación"
+                      >
+                        <button
+                          class="education__tab is-active"
+                          type="button"
+                          role="tab"
+                          id="tab-official"
+                          aria-selected="true"
+                          aria-controls="education-official"
+                          tabindex="0"
+                        >
+                          Oficial
+                        </button>
+
+                        <button
+                          class="education__tab"
+                          type="button"
+                          role="tab"
+                          id="tab-complementary"
+                          aria-selected="false"
+                          aria-controls="education-complementary"
+                          tabindex="-1"
+                        >
+                          Complementaria
+                        </button>
+                      </div>
+
+                      <div class="education__content">
+                        <section
+                          class="education-group is-active"
+                          id="education-official"
+                          role="tabpanel"
+                          aria-labelledby="tab-official"
+                          tabindex="0"
+                        >
+                          <h3>Formación oficial</h3>
+
+                          <article class="education-entry">
+                            <div class="education-entry__header">
+                              <p class="education-entry__meta">
+                                CFGS ·
+                                <span class="education-entry__status"
+                                  >En curso</span
+                                >
+                              </p>
+
+                              <h4>
+                                Desarrollo de Aplicaciones Multiplataforma
+                              </h4>
+                            </div>
+
+                            <p class="education-entry__description">
+                              Formación centrada en programación, bases de
+                              datos, desarrollo de software y tecnologías
+                              relacionadas con aplicaciones multiplataforma.
+                            </p>
+                          </article>
+                        </section>
+
+                        <section
+                          class="education-group"
+                          id="education-complementary"
+                          role="tabpanel"
+                          aria-labelledby="tab-complementary"
+                          tabindex="0"
+                        >
+                          <h3>Formación complementaria</h3>
+
+                          <div class="education-group__list">
+                            <article class="education-entry">
+                              <div class="education-entry__header">
+                                <p class="education-entry__meta">
+                                  Udemy ·
+                                  <span class="education-entry__status"
+                                    >En curso</span
+                                  >
+                                </p>
+
+                                <h4>Git &amp; GitHub</h4>
+                              </div>
+                            </article>
+
+                            <article class="education-entry">
+                              <div class="education-entry__header">
+                                <p class="education-entry__meta">
+                                  Udemy ·
+                                  <span class="education-entry__status"
+                                    >En curso</span
+                                  >
+                                </p>
+
+                                <h4>JavaScript</h4>
+                              </div>
+                            </article>
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
             </div>
 
             <div
-              class="education__tabs"
-              role="tablist"
-              aria-label="Tipo de formación"
+              class="portfolio-viewer__corner"
+              style="--corner: 0deg"
+              aria-hidden="true"
             >
-              <button
-                class="education__tab is-active"
-                type="button"
-                role="tab"
-                id="tab-official"
-                aria-selected="true"
-                aria-controls="education-official"
-                tabindex="0"
-              >
-                Oficial
-              </button>
-
-              <button
-                class="education__tab"
-                type="button"
-                role="tab"
-                id="tab-complementary"
-                aria-selected="false"
-                aria-controls="education-complementary"
-                tabindex="-1"
-              >
-                Complementaria
-              </button>
+              <i></i><i></i><i></i><i></i>
             </div>
-
-            <div class="education__content">
-              <section
-                class="education-group is-active"
-                id="education-official"
-                role="tabpanel"
-                aria-labelledby="tab-official"
-                tabindex="0"
-              >
-                <h3>Formación oficial</h3>
-
-                <article class="education-entry">
-                  <div class="education-entry__header">
-                    <p class="education-entry__meta">
-                      CFGS ·
-                      <span class="education-entry__status">En curso</span>
-                    </p>
-
-                    <h4>Desarrollo de Aplicaciones Multiplataforma</h4>
-                  </div>
-
-                  <p class="education-entry__description">
-                    Formación centrada en programación, bases de datos,
-                    desarrollo de software y tecnologías relacionadas con
-                    aplicaciones multiplataforma.
-                  </p>
-                </article>
-              </section>
-
-              <section
-                class="education-group"
-                id="education-complementary"
-                role="tabpanel"
-                aria-labelledby="tab-complementary"
-                tabindex="0"
-              >
-                <h3>Formación complementaria</h3>
-
-                <div class="education-group__list">
-                  <article class="education-entry">
-                    <div class="education-entry__header">
-                      <p class="education-entry__meta">
-                        Udemy ·
-                        <span class="education-entry__status">En curso</span>
-                      </p>
-
-                      <h4>Git &amp; GitHub</h4>
-                    </div>
-                  </article>
-
-                  <article class="education-entry">
-                    <div class="education-entry__header">
-                      <p class="education-entry__meta">
-                        Udemy ·
-                        <span class="education-entry__status">En curso</span>
-                      </p>
-
-                      <h4>JavaScript</h4>
-                    </div>
-                  </article>
-                </div>
-              </section>
+            <div
+              class="portfolio-viewer__corner"
+              style="--corner: 90deg"
+              aria-hidden="true"
+            >
+              <i></i><i></i><i></i><i></i>
+            </div>
+            <div
+              class="portfolio-viewer__corner"
+              style="--corner: 180deg"
+              aria-hidden="true"
+            >
+              <i></i><i></i><i></i><i></i>
+            </div>
+            <div
+              class="portfolio-viewer__corner"
+              style="--corner: 270deg"
+              aria-hidden="true"
+            >
+              <i></i><i></i><i></i><i></i>
             </div>
           </div>
         </div>
+        <p class="portfolio-viewer__status" aria-live="polite"></p>
       </section>
 
       <section class="contact" id="contacto" aria-labelledby="contact-title">
