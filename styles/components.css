@@ -511,17 +511,38 @@
    Shared section
    ========================= */
 
+/* Número y etiqueta de las secciones del portfolio. */
 .section-number {
   color: var(--color-accent-3);
 }
 
+.section-eyebrow {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+/* Línea decorativa después de la etiqueta. */
+.section-eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: clamp(1rem, 2vw, 2rem);
+  height: 1px;
+  margin-inline-start: var(--space-xs);
+  background: var(--color-border);
+  vertical-align: middle;
+}
+
+/* Contacto conserva el efecto de profundidad de la página anterior. */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .section-depth {
+  .contact > .section-depth {
     --depth-gutter: min(1.5rem, calc(var(--container-padding) - 0.5rem));
 
     margin: -1.5rem calc(-1 * var(--depth-gutter));
     padding: 1.5rem var(--depth-gutter);
-
     border-radius: 12px;
 
     box-shadow:
@@ -531,78 +552,123 @@
     transition: box-shadow var(--duration-normal) var(--ease-standard);
   }
 
-  .principles > .section-depth > .section-depth__content,
-  .contact__header,
-  .profile__header,
-  .profile__text,
-  .profile__highlight,
-  .stack__header,
-  .learning-log__header,
-  .education__header,
-  .education__tabs {
+  .contact__header {
     transform: var(--depth-transform, none);
-
     transition: transform var(--duration-normal) var(--ease-standard);
   }
 
-  .profile__details,
-  .stack-group,
-  .learning-entry {
-    box-shadow: var(--depth-panel-shadow, none);
-
-    transition: box-shadow var(--duration-normal) var(--ease-standard);
-  }
-
-  @media (min-width: 48.0625rem) {
-    .education-group {
-      box-shadow: var(--depth-panel-shadow, none);
-
-      transition: box-shadow var(--duration-normal) var(--ease-standard);
-    }
-  }
-
-  main > section:hover > .section-depth {
+  .contact:hover > .section-depth {
     --depth-transform: translateY(2px) scale(0.99);
 
-    --depth-panel-shadow:
-      0 22px 34px -8px rgb(0 0 0 / 100%), 0 6px 12px -3px rgb(0 0 0 / 80%),
-      inset 0 1px 0 rgb(255 255 255 / 8%);
-
-    box-shadow:
-      inset 0 12px 24px -9px rgb(0 0 0 / 95%),
-      inset 0 -1px 0 rgb(255 255 255 / 4%);
-  }
-
-  .contact:hover > .section-depth {
     --contact-letter-shadow:
       0 12px 3px rgb(0 0 0 / 100%), 0 24px 9px rgb(0 0 0 / 95%),
       0 34px 18px rgb(0 0 0 / 85%);
 
     --contact-icon-shadow: drop-shadow(0 12px 3px rgb(0 0 0 / 100%))
       drop-shadow(0 22px 8px rgb(0 0 0 / 90%));
+
+    box-shadow:
+      inset 0 12px 24px -9px rgb(0 0 0 / 95%),
+      inset 0 -1px 0 rgb(255 255 255 / 4%);
   }
 }
 
-.section-eyebrow {
-  color: var(--color-text-muted);
+/* =========================================
+   Portfolio viewer — Cabecera y navegación
+   ========================================= */
 
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.015em;
-  text-transform: uppercase;
+/* Usa los mismos márgenes laterales que el hero. */
+.portfolio-viewer {
+  position: relative;
+  container-type: inline-size;
+  width: min(calc(100% - var(--container-padding) * 2), var(--container-width));
+  margin-inline: auto;
+  padding-block: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  scroll-margin-top: 6rem;
 }
 
-.section-eyebrow::after {
-  content: "";
+/* Título a la izquierda, flechas y contador a la derecha. */
+.portfolio-viewer__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
 
-  display: inline-block;
-  width: clamp(1rem, 2vw, 2rem);
+.portfolio-viewer__controls,
+.portfolio-viewer__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.portfolio-viewer__nav {
+  flex-wrap: wrap;
+  margin-block-start: var(--space-md);
+}
+
+/* Limita estos estilos a los mandos del visor.
+   Las galerías y las pestañas de Formación tienen sus propios botones. */
+.portfolio-viewer__controls > button,
+.portfolio-viewer__nav > button {
+  min-height: 2.75rem;
+  padding: 0.5rem var(--space-sm);
+  border: var(--border-thin);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.portfolio-viewer__controls > button {
+  min-width: 2.75rem;
+}
+
+.portfolio-viewer__controls > span {
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.portfolio-viewer__controls > button:hover,
+.portfolio-viewer__nav > button:hover {
+  border-color: var(--color-text-secondary);
+}
+
+.portfolio-viewer__nav > button[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* El lector de pantalla recibe el nombre de la sección seleccionada. */
+.portfolio-viewer__status {
+  position: absolute;
+  width: 1px;
   height: 1px;
-  margin-inline-start: var(--space-xs);
+  overflow: hidden;
+  clip-path: inset(50%);
+}
 
-  background: var(--color-border);
-  vertical-align: middle;
+/* =========================
+   Portfolio viewer — Responsive
+   ========================= */
+
+@media (max-width: 48rem) {
+  .portfolio-viewer__nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+
+  .portfolio-viewer__nav > button {
+    padding-inline: 0.125rem;
+    font-size: clamp(0.6875rem, 3.2vw, 0.875rem);
+  }
 }
 
 /* =========================
