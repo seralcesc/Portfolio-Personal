@@ -28,34 +28,30 @@
    Header
    ========================= */
 
+/* Cabecera fija al desplazarse, con el fondo ligeramente translúcido. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-
   border-bottom: var(--border-thin);
-
   background: color-mix(in oklch, var(--color-bg), transparent 8%);
   backdrop-filter: blur(14px);
 }
 
 .site-header__inner {
-  min-height: 4.5rem;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xl);
+  gap: var(--space-sm);
+  min-height: 4.5rem;
 }
 
+/* Marca y respuesta al pasar el ratón o recibir el foco. */
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
   flex-shrink: 0;
-
+  gap: 0.625rem;
   color: var(--color-text);
-
   font-size: 0.875rem;
   font-weight: var(--weight-semibold);
   letter-spacing: 0.08em;
@@ -63,17 +59,14 @@
   text-decoration: none;
 }
 
-.site-brand:hover,
-.site-brand:focus-visible {
+.site-brand:is(:hover, :focus-visible) {
   text-decoration: none;
 }
 
 .site-brand__logo {
   display: block;
-
   width: 2.5rem;
   height: 2.5rem;
-
   object-fit: contain;
 }
 
@@ -83,15 +76,14 @@
     text-shadow var(--duration-normal) var(--ease-standard);
 }
 
-.site-brand:hover .site-brand__name,
-.site-brand:focus-visible .site-brand__name {
+.site-brand:is(:hover, :focus-visible) .site-brand__name {
   color: var(--color-accent);
-
   text-shadow:
     0 4px 2px rgb(0 0 0 / 95%),
     0 9px 9px rgb(0 0 0 / 80%);
 }
 
+/* El margen automático empuja Proyectos, Contacto y GitHub hacia la derecha. */
 .site-nav {
   margin-inline-start: auto;
 }
@@ -104,77 +96,67 @@
 
 .site-nav a {
   position: relative;
-
   display: inline-flex;
   align-items: center;
-
   min-height: 2.75rem;
-
   color: var(--color-text-secondary);
-
   font-size: 0.875rem;
   font-weight: var(--weight-medium);
   text-decoration: none;
-
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
-/* Subrayado y hover carmesí */
-
+/* Subrayado carmesí animado para los enlaces de navegación. */
 .site-nav a::after {
   content: "";
-
   position: absolute;
   inset-inline: 0;
   bottom: 0.35rem;
-
   height: 1px;
-
   background: var(--color-accent);
-
   transform: scaleX(0);
   transform-origin: right;
-
   transition: transform var(--duration-normal) var(--ease-standard);
 }
 
-.site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:is(:hover, :focus-visible) {
   color: var(--color-text);
   text-decoration: none;
 }
 
-.site-nav a:hover::after,
-.site-nav a:focus-visible::after {
+.site-nav a:is(:hover, :focus-visible)::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-/* Botón del menú */
+/* El icono conserva su tamaño del HTML dentro de un área pulsable de 44 px. */
+.site-header__github {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 2.75rem;
+  min-height: 2.75rem;
+}
 
+/* El botón se muestra en el bloque de pantallas pequeñas. */
 .menu-toggle {
   display: none;
   align-items: center;
   gap: var(--space-sm);
-
   min-height: 2.75rem;
-
   cursor: pointer;
   color: var(--color-text);
-
   font-size: 0.875rem;
   font-weight: var(--weight-medium);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
+/* El icono de apertura y el de cierre comparten las mismas dos líneas. */
 .menu-toggle__icon,
 .mobile-menu__close-icon {
   position: relative;
-
   display: block;
   flex-shrink: 0;
-
   width: 1.125rem;
   height: 1rem;
 }
@@ -184,13 +166,10 @@
 .mobile-menu__close-icon::before,
 .mobile-menu__close-icon::after {
   content: "";
-
   position: absolute;
   inset-inline: 0;
   top: 50%;
-
   height: 1px;
-
   background: currentColor;
 }
 
@@ -215,13 +194,16 @@
    ========================= */
 
 @media (max-width: 48rem) {
+  /* El nombre queda a la izquierda y el diálogo sustituye al menú de escritorio. */
   .site-nav,
   .site-brand__logo {
     display: none;
   }
 
+  /* Menú y GitHub quedan agrupados a la derecha. */
   .menu-toggle {
     display: inline-flex;
+    margin-inline-start: auto;
   }
 }
 
@@ -229,22 +211,20 @@
    Mobile menu
    ========================= */
 
+/* El diálogo queda centrado y puede desplazarse si no cabe en altura. */
 .mobile-menu {
-  width: min(calc(100% - (var(--container-padding) * 2)), 32rem);
-  max-height: calc(100dvh - (var(--space-xl) * 2));
-
+  width: min(calc(100% - var(--container-padding) * 2), 32rem);
+  max-height: calc(100dvh - var(--space-xl) * 2);
   overflow: auto;
-
   margin: auto;
   padding: 0;
-
   border: var(--border-thin);
   border-radius: var(--radius-sm);
-
   background: var(--color-surface);
   color: var(--color-text);
 }
 
+/* Velo detrás del diálogo para distinguirlo de la página. */
 .mobile-menu::backdrop {
   background: color-mix(in oklch, var(--color-bg), transparent 18%);
   backdrop-filter: blur(6px);
@@ -253,21 +233,18 @@
 .mobile-menu__inner {
   display: grid;
   gap: var(--space-lg);
-
   padding: clamp(var(--space-xl), 6vw, var(--space-2xl));
 }
 
+/* Botón de cierre arriba a la derecha y logotipo centrado. */
 .mobile-menu__close {
   display: inline-flex;
   align-items: center;
   justify-self: end;
   gap: var(--space-sm);
-
   min-height: 2.75rem;
-
   cursor: pointer;
   color: var(--color-text-secondary);
-
   font-size: 0.875rem;
   font-weight: var(--weight-medium);
   letter-spacing: 0.05em;
@@ -277,17 +254,12 @@
 .mobile-menu__logo {
   display: block;
   justify-self: center;
-
   width: 5rem;
   height: 5rem;
-
   object-fit: contain;
 }
 
-.mobile-menu__list {
-  display: grid;
-}
-
+/* Cada enlace ocupa toda su fila y tiene una zona de toque amplia. */
 .mobile-menu__list li {
   border-top: var(--border-thin);
 }
@@ -297,33 +269,42 @@
 }
 
 .mobile-menu__list a {
-  position: relative;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
   min-height: 4rem;
   padding-inline-start: 1rem;
-
   color: var(--color-text-secondary);
-
   font-size: clamp(1.25rem, 5vw, 1.75rem);
   font-weight: var(--weight-medium);
   text-decoration: none;
-
   transition:
     color var(--duration-fast) var(--ease-standard),
     padding-inline-start var(--duration-normal) var(--ease-standard);
 }
 
-.mobile-menu__list a:hover,
-.mobile-menu__list a:focus-visible {
+.mobile-menu__list a:is(:hover, :focus-visible) {
   padding-inline-start: calc(1rem + var(--space-sm));
-
   color: var(--color-accent);
   text-decoration: none;
 }
+
+/* =========================
+   Mobile menu — Pantallas pequeñas
+   ========================= */
+
+@media (max-width: 26rem) {
+  /* Deja más espacio para los enlaces en pantallas estrechas. */
+  .mobile-menu__inner {
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .mobile-menu__logo {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
 /* =========================
    Hero
    ========================= */
@@ -2252,28 +2233,10 @@
    ========================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .skip-link,
+  /* Header. */
+  .site-brand__name,
   .site-nav a,
-  .site-nav a::after,
-  .mobile-menu__list a,
-  .hero__actions a,
-  .hero__external-icon,
-  .project__gallery-button,
-  .project__links a::after,
-  .learning-entry > a,
-  .education__tab,
-  .education__tab::after,
-  .contact__links a,
-  .contact__icon,
-  .contact__mail-flap,
-  .contact__mail-open,
-  .contact__pdf-sheet,
-  .contact__pdf-fold,
-  .contact__links a::before,
-  .contact__links a::after,
-  .contact__links a > span,
-  .site-footer__brand > a,
-  .site-footer__nav a {
+  .site-nav a::after {
     transition: none;
   }
 }
